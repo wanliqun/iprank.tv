@@ -1,10 +1,10 @@
-1. About 
+i. About 
 
 This project is the implementation for the website iPrank.TV
 
 iPrank is a hub for pranks and also a good place to show off and share your pranks to the world. It features tons of cool, interesting, and funny pranks. We hope you enjoy it and participate in sharing us your pranks.
 
-2. Dependencies
+ii. Dependencies
 
 a. CoolPHP
 
