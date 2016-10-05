@@ -1,0 +1,11 @@
+===================================================================================
+Bootstrap V3.1.1 - 05/29/2014
+
+dist:
+https://github.com/twbs/bootstrap/releases/download/v3.1.1/bootstrap-3.1.1-dist.zip
+
+source(with less):
+https://github.com/twbs/bootstrap/archive/v3.1.1.zip
+
+source(with sass):
+https://github.com/twbs/bootstrap-sass/archive/v3.1.1.tar.gz

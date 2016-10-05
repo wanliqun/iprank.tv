@@ -1,0 +1,39 @@
+Start Logging [2015-02-11 01:50:43 0.21147400]==============
+[2015-02-11 01:50:43] REQUEST_URI: /
+[2015-02-11 01:50:43] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-11 01:50:43] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.01686
+[2015-02-11 01:50:43] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00747
+[2015-02-11 01:50:43] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('4','3','2','1'))) LIMIT 0,4
+Use time:0.00397
+[2015-02-11 01:50:43] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.03519
+[2015-02-11 01:50:43] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (1441,1390,1391,1312,1313,1392,1314,1227,1442,1393,1394,1315,1444,1395,1316,1317,1276,1292,1228,1396,1397,1398,1318,1319,1320,1321,968,1322,1323,1326)))
+Use time:0.00210
+[2015-02-11 01:50:43] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (10642,10591,10592,10513,10514,10593,10515,10428,10643,10594,10595,10516,10645,10596,10517,10518,10477,10493,10429,10597,10598,10599,10519,10520,10521,10522,10169,10523,10524,10527)))
+Use time:0.01107
+[2015-02-11 01:50:43] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.01822
+[2015-02-11 01:50:43] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2015-02-11 01:50:43] [log] Process: 0.286s ( Load:0.0s Init:0.035s Exec:0.226s Template:0.024s )
+Start Logging [2015-02-11 01:50:43 0.51818400]==============
+[2015-02-11 01:50:43] REQUEST_URI: /min/?g=css
+[2015-02-11 01:50:43] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-11 01:50:43] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00028
+Start Logging [2015-02-11 01:50:44 0.02135400]==============
+[2015-02-11 01:50:44] REQUEST_URI: /min/?g=js
+[2015-02-11 01:50:44] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-11 01:50:44] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00032
+Start Logging [2015-02-11 01:50:44 0.04667200]==============
+[2015-02-11 01:50:44] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2015-02-11 01:50:44] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-11 01:50:44] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00050
+Start Logging [2015-02-11 01:50:44 0.78481000]==============
+[2015-02-11 01:50:44] REQUEST_URI: /?c=js&a=post_actionbox&postids=10642%2C10591%2C10592%2C10513%2C10514%2C10593%2C10515%2C10428%2C10643%2C10594%2C10595%2C10516%2C10645%2C10596%2C10517%2C10518%2C10477%2C10493%2C10429%2C10597%2C10598%2C10599%2C10519%2C10520%2C10521%2C10522%2C10169%2C10523%2C10524%2C10527&_=1423619444690
+[2015-02-11 01:50:44] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-11 01:50:44] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00034

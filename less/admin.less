@@ -1,0 +1,253 @@
+.ip-admin-wrapper {
+    .container-fluid();
+    
+    .btn-admin {
+        background-color: @yellow-green;
+        color: white;
+        
+        &:hover {
+            background-color: @olive-green-dark; //darken(@yellow-green, 10%);
+            color: @golden-rod-color;
+        }
+        
+        &.active {
+            background-color: @olive-green-dark; //darken(@yellow-green, 15%);
+            color: @golden-rod-color;
+        }
+    }
+    
+    .ip-header {
+        .navbar-header {
+            margin-left: 15px;
+        }
+        
+        .navbar-right {
+            color: @gray-light;
+            position: absolute;
+            bottom: 5px;
+            right: 20px;
+            
+            a {
+                color: @gray-light2;
+                &:hover {
+                    color: @gray-lighter;
+                    text-decoration: underline;
+                }
+            }
+        }
+    } 
+
+    .ip-container {
+        .make-row();
+        
+        .ip-master {
+            .make-sm-column(3);
+            .make-md-column(2.5);
+            .make-lg-column(2);
+            
+            min-height: 520px;
+            background-color: @gray-light3;
+            
+            h1 {
+                .ip-h1-lvl1();
+                color: black;
+                display: block;
+                text-align: center;
+                margin: 20px 0; 
+            }
+            
+            .ip-menulist {
+                .menu-header {
+                    margin: 0px -15px;
+                    background-color: @gray-darker;
+                    color: white;
+                    padding: 3px 15px;
+                    font-size: 16px;
+                    
+                    .img-menu-arrow {
+                        display: block;
+                        width: 14px;
+                        height: 14px;
+                        float: right;
+                        margin-top: 3px;
+                    }
+                }
+                
+                .ip-menuitem {
+                    padding: 0;
+                    list-style-type: none;
+                    
+                    .active {
+                        a { 
+                            font-weight: bold;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .ip-detail {
+            .make-sm-column(9);
+            .make-md-column(9.5);
+            .make-lg-column(10);
+            
+            .nav-tabbar {
+                list-style-type: none;
+                padding: 8px 5px 0px 15px;
+                background-color: @gray-lighter;
+                border-color: transparent transparent @gray-light transparent; 
+                border-style: solid;
+                border-width: 1px;
+                
+                li {
+                    display: inline-block;
+                    padding: 2px;
+                    margin-right: 8px;
+                    text-align: center;
+                    min-width: 120px;
+                    background-color: @gray-lighter;
+                    border-color: @gray-light @gray-light  transparent @gray-light; 
+                    border-style: solid;
+                    border-width: 1px;
+                    color: @gray;
+                    
+                    &.active {
+                        font-weight: bold;
+                        color: black;
+                        background-color: white;
+                    }
+                }
+            }
+            
+            .content-wrapper {
+                .table-responsive();
+                padding-bottom: 25px;
+                
+                input[type='checkbox'] {
+                    float:left;
+                    margin-right: 10px;
+                }
+                
+                .ip-pagination-box {
+                    float: right;
+                }
+            }
+            
+            .wrapper-shape {
+                @shadow-color: lighten(#000, 65%);
+                .ip-box-shadow(0px 0px 2px 1px @shadow-color);
+                border-radius: 2px; 
+                margin-bottom: 15px;
+            }
+            
+            .admin-posts-wrapper {
+                .wrapper-shape();
+                
+                .col-post-title {
+                    .truncate();
+                    max-width: 300px;
+                    width: 33%;
+                }
+            }
+            
+            .admin-members-wrapper {
+                .wrapper-shape();
+            }
+            
+            .admin-tags-wrapper {
+                .wrapper-shape();
+                
+                .col-tag-name {
+                    max-width: 300px;
+                    width: 33%;
+                }
+            }
+            
+             .admin-crawler-wrapper {
+                .wrapper-shape();
+                
+                .addyt-channel-op-area, .crawling-op-area {
+                    padding: 0 15px 10px; 
+                    border-style: none none solid; 
+                    border-color: @gray-light2; 
+                    border-width: 1px; 
+                    font-size:13px;
+                }
+                
+                .crawling-op-area {
+                    .clearfix();
+                    
+                    .op-tip {
+                        font-weight:bold;
+                    }
+                    
+                    .part-filter {
+                        float: left;
+                        
+                        .select-filter-channel {
+                            width:50%; 
+                            min-width: 320px;
+                            max-height:25px;
+                        }
+                        
+                        .filter-datepicker {
+                            width:25%; 
+                            min-width: 150px; 
+                            max-height:25px;
+                        }
+                    }
+                    
+                    .part-action {
+                        .btn-filter, .btn-crawl {
+                            display: block;
+                            float: left;
+                            
+                            margin: 0 0 0 15px;
+                            height: 186px;
+                            min-width: 120px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                
+                 .col-post-title, .col-yt-channel {
+                    .truncate();
+                    max-width: 200px;
+                    width: 25%;
+                }
+                
+                .col-yt-channel {
+                    max-width: 30px;
+                    width: 10%;
+                }
+            }
+        }
+    }
+}
+
+.admin-signin-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+
+    h1 {
+        font-family: 'Open Sans', @font-family-sans-serif;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    
+     form {
+        .common-form();
+        
+        .btn-signin {
+            width: 50%;
+            float: right;
+        }
+         .input-group{ 
+            .input-group-addon {
+                width: 35% !important;
+            }
+         }
+     }
+}
+

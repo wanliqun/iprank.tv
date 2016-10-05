@@ -1,0 +1,800 @@
+Start Logging [2016-07-04 12:55:06 0.02630800]==============
+[2016-07-04 12:55:06] REQUEST_URI: /
+[2016-07-04 12:55:06] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:06] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.07569
+[2016-07-04 12:55:06] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.01684
+[2016-07-04 12:55:06] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00872
+[2016-07-04 12:55:06] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.02817
+[2016-07-04 12:55:06] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.01358
+[2016-07-04 12:55:06] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.03546
+[2016-07-04 12:55:07] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.91912
+[2016-07-04 12:55:07] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 12:55:07] [log] Process: 1.324s ( Load:0.0s Init:0.020s Exec:1.286s Template:0.018s )
+Start Logging [2016-07-04 12:55:07 0.57105800]==============
+[2016-07-04 12:55:07] REQUEST_URI: /min/?g=css
+[2016-07-04 12:55:07] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:07] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00030
+[2016-07-04 12:55:07] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:07] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:07 0.64482200]==============
+[2016-07-04 12:55:07] REQUEST_URI: /min/?g=js
+[2016-07-04 12:55:07] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:07] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00033
+[2016-07-04 12:55:07] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:07] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:07 0.67777400]==============
+[2016-07-04 12:55:07] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 12:55:07] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:07] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00055
+[2016-07-04 12:55:07] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:07] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:10 0.72508300]==============
+[2016-07-04 12:55:10] REQUEST_URI: /
+[2016-07-04 12:55:10] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:10] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00043
+[2016-07-04 12:55:10] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00631
+[2016-07-04 12:55:10] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00075
+[2016-07-04 12:55:10] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00332
+[2016-07-04 12:55:10] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00235
+[2016-07-04 12:55:10] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00085
+[2016-07-04 12:55:11] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.45171
+[2016-07-04 12:55:11] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 12:55:11] [log] Process: 0.509s ( Load:0.0s Init:0.011s Exec:0.487s Template:0.012s )
+Start Logging [2016-07-04 12:55:14 0.89874400]==============
+[2016-07-04 12:55:14] REQUEST_URI: /min/?g=css
+[2016-07-04 12:55:14] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:14] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00045
+[2016-07-04 12:55:14] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:14] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:25 0.94871500]==============
+[2016-07-04 12:55:25] REQUEST_URI: /
+[2016-07-04 12:55:25] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:25] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00357
+[2016-07-04 12:55:26] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00723
+[2016-07-04 12:55:26] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00123
+[2016-07-04 12:55:26] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00393
+[2016-07-04 12:55:26] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00247
+[2016-07-04 12:55:26] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00336
+[2016-07-04 12:55:26] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.46433
+[2016-07-04 12:55:26] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 12:55:26] [log] Process: 0.639s ( Load:0.0s Init:0.017s Exec:0.602s Template:0.020s )
+Start Logging [2016-07-04 12:55:26 0.76096700]==============
+[2016-07-04 12:55:26] REQUEST_URI: /min/?g=css
+[2016-07-04 12:55:26] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:26] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+[2016-07-04 12:55:26] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:26] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:26 0.84135600]==============
+[2016-07-04 12:55:26] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 12:55:26] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:26] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00055
+[2016-07-04 12:55:26] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:26] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:26 0.87241500]==============
+[2016-07-04 12:55:26] REQUEST_URI: /min/?g=js
+[2016-07-04 12:55:26] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:26] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00044
+[2016-07-04 12:55:26] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:26] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:51 0.21967100]==============
+[2016-07-04 12:55:51] REQUEST_URI: /popular/
+[2016-07-04 12:55:51] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:51] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00349
+[2016-07-04 12:55:51] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_viewed` + ps.`newly_viewed`) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY (ps.`default_viewed` + ps.`newly_viewed`) DESC, ps.`created_at` DESC LIMIT 0, 60;		
+Use time:0.26155
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-07-04 12:55:51] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.35836
+[2016-07-04 12:55:51] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-07-04 12:55:51] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-07-04 12:55:51] [log] Process: 0.726s ( Load:0.0s Init:0.011s Exec:0.702s Template:0.014s )
+Start Logging [2016-07-04 12:55:52 0.11891200]==============
+[2016-07-04 12:55:52] REQUEST_URI: /min/?g=css
+[2016-07-04 12:55:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00039
+[2016-07-04 12:55:52] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:52] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:52 0.19923700]==============
+[2016-07-04 12:55:52] REQUEST_URI: /min/?f=jquery.dotdotdot.min.js,bootstrap-paginator.min.js,bootstrap-select.min.js,popular.js&b=public/js
+[2016-07-04 12:55:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+[2016-07-04 12:55:52] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:52] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:52 0.23407600]==============
+[2016-07-04 12:55:52] REQUEST_URI: /min/?g=js
+[2016-07-04 12:55:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+[2016-07-04 12:55:52] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:52] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:53 0.27114400]==============
+[2016-07-04 12:55:53] REQUEST_URI: /channels/
+[2016-07-04 12:55:53] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:53] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00040
+[2016-07-04 12:55:53] [log] Query SQL:SELECT * FROM `channels` ORDER BY position DESC
+Use time:0.01407
+[2016-07-04 12:55:53] [log] Query SQL:(SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=1 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=2 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=3 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=4 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=11 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=12 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=13 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=5 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=6 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=7 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=8 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=9 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=10 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12)
+Use time:0.12713
+[2016-07-04 12:55:53] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 12:55:53] [log] Process: 0.198s ( Load:0.0s Init:0.006s Exec:0.171s Template:0.021s )
+Start Logging [2016-07-04 12:55:53 0.64465600]==============
+[2016-07-04 12:55:53] REQUEST_URI: /min/?g=css
+[2016-07-04 12:55:53] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:53] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00042
+[2016-07-04 12:55:53] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:53] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:53 0.71922300]==============
+[2016-07-04 12:55:53] REQUEST_URI: /min/?f=bootstrap-paginator.min.js,slick.min.js&b=public/js
+[2016-07-04 12:55:53] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:53] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00040
+[2016-07-04 12:55:53] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:53] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:55:53 0.77794700]==============
+[2016-07-04 12:55:53] REQUEST_URI: /min/?g=js
+[2016-07-04 12:55:53] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:55:53] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00037
+[2016-07-04 12:55:53] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:55:53] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:56:10 0.94380500]==============
+[2016-07-04 12:56:10] REQUEST_URI: /
+[2016-07-04 12:56:10] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:56:10] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00405
+[2016-07-04 12:56:11] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00721
+[2016-07-04 12:56:11] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00221
+[2016-07-04 12:56:11] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00358
+[2016-07-04 12:56:11] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00221
+[2016-07-04 12:56:11] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00314
+[2016-07-04 12:56:11] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.35627
+[2016-07-04 12:56:11] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 12:56:11] [log] Process: 0.517s ( Load:0.0s Init:0.022s Exec:0.480s Template:0.015s )
+Start Logging [2016-07-04 12:56:11 0.63180800]==============
+[2016-07-04 12:56:11] REQUEST_URI: /min/?g=css
+[2016-07-04 12:56:11] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:56:11] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00066
+[2016-07-04 12:56:11] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:56:11] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:56:11 0.70126600]==============
+[2016-07-04 12:56:11] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 12:56:11] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:56:11] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00436
+[2016-07-04 12:56:11] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:56:11] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:56:11 0.73974400]==============
+[2016-07-04 12:56:11] REQUEST_URI: /min/?g=js
+[2016-07-04 12:56:11] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:56:11] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+[2016-07-04 12:56:11] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:56:11] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:56:51 0.78918500]==============
+[2016-07-04 12:56:51] REQUEST_URI: /
+[2016-07-04 12:56:51] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:56:51] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00065
+[2016-07-04 12:56:51] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00397
+[2016-07-04 12:56:51] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00060
+[2016-07-04 12:56:51] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00453
+[2016-07-04 12:56:51] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00356
+[2016-07-04 12:56:51] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00070
+[2016-07-04 12:56:52] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.35261
+[2016-07-04 12:56:52] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 12:56:52] [log] Process: 0.480s ( Load:0.0s Init:0.012s Exec:0.453s Template:0.014s )
+Start Logging [2016-07-04 12:57:11 0.28748200]==============
+[2016-07-04 12:57:11] REQUEST_URI: /
+[2016-07-04 12:57:11] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:57:11] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00220
+[2016-07-04 12:57:11] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00452
+[2016-07-04 12:57:11] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00235
+[2016-07-04 12:57:11] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00355
+[2016-07-04 12:57:11] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00228
+[2016-07-04 12:57:11] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00260
+[2016-07-04 12:57:11] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.38766
+[2016-07-04 12:57:11] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 12:57:11] [log] Process: 0.522s ( Load:0.0s Init:0.011s Exec:0.497s Template:0.014s )
+Start Logging [2016-07-04 12:57:11 0.99000500]==============
+[2016-07-04 12:57:11] REQUEST_URI: /min/?g=css
+[2016-07-04 12:57:11] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:57:12] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00048
+[2016-07-04 12:57:12] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:57:12] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:57:12 0.04884800]==============
+[2016-07-04 12:57:12] REQUEST_URI: /min/?g=js
+[2016-07-04 12:57:12] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:57:12] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00052
+[2016-07-04 12:57:12] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:57:12] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:57:12 0.08482800]==============
+[2016-07-04 12:57:12] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 12:57:12] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:57:12] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00038
+[2016-07-04 12:57:12] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:57:12] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:57:17 0.18116900]==============
+[2016-07-04 12:57:17] REQUEST_URI: /min/?g=css
+[2016-07-04 12:57:17] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:57:17] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+[2016-07-04 12:57:17] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:57:17] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:57:43 0.93034600]==============
+[2016-07-04 12:57:43] REQUEST_URI: /
+[2016-07-04 12:57:43] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:57:43] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00042
+[2016-07-04 12:57:43] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00497
+[2016-07-04 12:57:43] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00035
+[2016-07-04 12:57:43] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00364
+[2016-07-04 12:57:43] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00217
+[2016-07-04 12:57:43] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00048
+[2016-07-04 12:57:44] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.34344
+[2016-07-04 12:57:44] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 12:57:44] [log] Process: 0.430s ( Load:0.0s Init:0.011s Exec:0.404s Template:0.014s )
+Start Logging [2016-07-04 12:57:44 0.50623100]==============
+[2016-07-04 12:57:44] REQUEST_URI: /min/?g=css
+[2016-07-04 12:57:44] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:57:44] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00046
+[2016-07-04 12:57:44] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:57:44] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:57:44 0.58416500]==============
+[2016-07-04 12:57:44] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 12:57:44] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:57:44] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00045
+[2016-07-04 12:57:44] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:57:44] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 12:57:44 0.62183700]==============
+[2016-07-04 12:57:44] REQUEST_URI: /min/?g=js
+[2016-07-04 12:57:44] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 12:57:44] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+[2016-07-04 12:57:44] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 12:57:44] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:00:09 0.51933800]==============
+[2016-07-04 13:00:09] REQUEST_URI: /
+[2016-07-04 13:00:09] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:00:09] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00088
+[2016-07-04 13:00:09] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00515
+[2016-07-04 13:00:09] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00049
+[2016-07-04 13:00:09] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00681
+[2016-07-04 13:00:09] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00269
+[2016-07-04 13:00:09] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00126
+[2016-07-04 13:00:09] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.37307
+[2016-07-04 13:00:09] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 13:00:09] [log] Process: 0.468s ( Load:0.0s Init:0.011s Exec:0.442s Template:0.014s )
+Start Logging [2016-07-04 13:00:10 0.25770400]==============
+[2016-07-04 13:00:10] REQUEST_URI: /min/?g=css
+[2016-07-04 13:00:10] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:00:10] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00069
+[2016-07-04 13:00:10] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:00:10] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:00:11 0.26928100]==============
+[2016-07-04 13:00:11] REQUEST_URI: /min/?g=js
+[2016-07-04 13:00:11] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:00:11] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00049
+[2016-07-04 13:00:11] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:00:11] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:00:11 0.30957800]==============
+[2016-07-04 13:00:11] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 13:00:11] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:00:11] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00044
+[2016-07-04 13:00:11] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:00:11] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:00:11 0.73171200]==============
+[2016-07-04 13:00:11] REQUEST_URI: /?c=js&a=post_actionbox&postids=45131%2C45145%2C45140%2C45177%2C45128%2C45127%2C45117%2C45110%2C45115%2C45088%2C45099%2C45089%2C45092%2C45094%2C45090%2C45095%2C45035%2C45056%2C45074%2C45041%2C45028%2C45011%2C45010%2C44465%2C44444%2C43796%2C44082%2C43945%2C44424%2C44425&_=1467637211219
+[2016-07-04 13:00:11] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:00:11] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00040
+Start Logging [2016-07-04 13:00:16 0.76609000]==============
+[2016-07-04 13:00:16] REQUEST_URI: /
+[2016-07-04 13:00:16] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:00:16] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00029
+[2016-07-04 13:00:16] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00523
+[2016-07-04 13:00:16] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00038
+[2016-07-04 13:00:16] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00348
+[2016-07-04 13:00:16] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00223
+[2016-07-04 13:00:16] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00049
+[2016-07-04 13:00:17] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.38466
+[2016-07-04 13:00:17] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 13:00:17] [log] Process: 0.427s ( Load:0.0s Init:0.003s Exec:0.414s Template:0.010s )
+Start Logging [2016-07-04 13:00:17 0.38820800]==============
+[2016-07-04 13:00:17] REQUEST_URI: /min/?g=css
+[2016-07-04 13:00:17] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:00:17] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00040
+[2016-07-04 13:00:17] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:00:17] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:00:17 0.64541500]==============
+[2016-07-04 13:00:17] REQUEST_URI: /min/?g=js
+[2016-07-04 13:00:17] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:00:17] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00048
+[2016-07-04 13:00:17] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:00:17] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:00:17 0.67672600]==============
+[2016-07-04 13:00:17] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 13:00:17] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:00:17] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00042
+[2016-07-04 13:00:17] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:00:17] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:00:18 0.78903400]==============
+[2016-07-04 13:00:18] REQUEST_URI: /?c=js&a=post_actionbox&postids=45131%2C45145%2C45140%2C45177%2C45128%2C45127%2C45117%2C45110%2C45115%2C45088%2C45099%2C45089%2C45092%2C45094%2C45090%2C45095%2C45035%2C45056%2C45074%2C45041%2C45028%2C45011%2C45010%2C44465%2C44444%2C43796%2C44082%2C43945%2C44424%2C44425&_=1467637217604
+[2016-07-04 13:00:18] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:00:18] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00068
+Start Logging [2016-07-04 13:01:15 0.93550000]==============
+[2016-07-04 13:01:15] REQUEST_URI: /
+[2016-07-04 13:01:15] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:01:15] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00589
+[2016-07-04 13:01:16] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.03512
+[2016-07-04 13:01:16] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00199
+[2016-07-04 13:01:16] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00348
+[2016-07-04 13:01:16] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00205
+[2016-07-04 13:01:16] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00188
+[2016-07-04 13:01:16] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.38183
+[2016-07-04 13:01:16] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 13:01:16] [log] Process: 0.554s ( Load:0.0s Init:0.011s Exec:0.528s Template:0.015s )
+Start Logging [2016-07-04 13:01:31 0.53788000]==============
+[2016-07-04 13:01:31] REQUEST_URI: /
+[2016-07-04 13:01:31] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:01:31] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00045
+[2016-07-04 13:01:31] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00077
+[2016-07-04 13:01:31] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00037
+[2016-07-04 13:01:31] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00367
+[2016-07-04 13:01:31] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00058
+[2016-07-04 13:01:31] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00049
+[2016-07-04 13:01:31] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.35128
+[2016-07-04 13:01:31] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 13:01:31] [log] Process: 0.395s ( Load:0.0s Init:0.005s Exec:0.380s Template:0.010s )
+Start Logging [2016-07-04 13:01:32 0.19964900]==============
+[2016-07-04 13:01:32] REQUEST_URI: /min/?g=css
+[2016-07-04 13:01:32] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:01:32] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00031
+[2016-07-04 13:01:32] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:01:32] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:01:32 0.50692200]==============
+[2016-07-04 13:01:32] REQUEST_URI: /min/?g=js
+[2016-07-04 13:01:32] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:01:32] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00051
+[2016-07-04 13:01:32] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:01:32] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:01:32 0.54053400]==============
+[2016-07-04 13:01:32] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 13:01:32] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:01:32] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00056
+[2016-07-04 13:01:32] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:01:32] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:01:33 0.87355000]==============
+[2016-07-04 13:01:33] REQUEST_URI: /?c=js&a=post_actionbox&postids=45131%2C45145%2C45140%2C45177%2C45128%2C45127%2C45117%2C45110%2C45115%2C45088%2C45099%2C45089%2C45092%2C45094%2C45090%2C45095%2C45035%2C45056%2C45074%2C45041%2C45028%2C45011%2C45010%2C44465%2C44444%2C43796%2C44082%2C43945%2C44424%2C44425&_=1467637292472
+[2016-07-04 13:01:33] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:01:33] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00046
+Start Logging [2016-07-04 13:03:14 0.47594200]==============
+[2016-07-04 13:03:14] REQUEST_URI: /
+[2016-07-04 13:03:14] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:03:14] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00091
+[2016-07-04 13:03:14] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00462
+[2016-07-04 13:03:14] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00063
+[2016-07-04 13:03:14] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00578
+[2016-07-04 13:03:14] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00310
+[2016-07-04 13:03:14] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00212
+[2016-07-04 13:03:14] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.44073
+[2016-07-04 13:03:14] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 13:03:14] [log] Process: 0.536s ( Load:0.0s Init:0.011s Exec:0.513s Template:0.012s )
+Start Logging [2016-07-04 13:03:22 0.22435800]==============
+[2016-07-04 13:03:22] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 13:03:22] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:03:22] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00058
+[2016-07-04 13:03:22] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:03:22] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:03:46 0.29947600]==============
+[2016-07-04 13:03:46] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 13:03:46] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:03:46] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00044
+[2016-07-04 13:03:46] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:03:46] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:03:48 0.83569700]==============
+[2016-07-04 13:03:48] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 13:03:48] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:03:48] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00047
+[2016-07-04 13:03:48] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:03:48] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:03:57 0.57568100]==============
+[2016-07-04 13:03:57] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 13:03:57] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:03:57] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+[2016-07-04 13:03:57] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:03:57] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:04:34 0.25279600]==============
+[2016-07-04 13:04:34] REQUEST_URI: /min/
+[2016-07-04 13:04:34] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:04:34] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00047
+[2016-07-04 13:04:34] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:04:34] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:04:37 0.84490300]==============
+[2016-07-04 13:04:37] REQUEST_URI: /
+[2016-07-04 13:04:37] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:04:37] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00026
+[2016-07-04 13:04:37] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00421
+[2016-07-04 13:04:37] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00048
+[2016-07-04 13:04:37] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00363
+[2016-07-04 13:04:37] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00152
+[2016-07-04 13:04:37] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00129
+[2016-07-04 13:04:38] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.43018
+[2016-07-04 13:04:38] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 13:04:38] [log] Process: 0.511s ( Load:0.0s Init:0.004s Exec:0.474s Template:0.034s )
+Start Logging [2016-07-04 13:04:38 0.50751900]==============
+[2016-07-04 13:04:38] REQUEST_URI: /min/?g=css
+[2016-07-04 13:04:38] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:04:38] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00489
+[2016-07-04 13:04:38] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:04:38] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:04:38 0.63653200]==============
+[2016-07-04 13:04:38] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 13:04:38] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:04:38] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00059
+[2016-07-04 13:04:38] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:04:38] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:04:38 0.67147300]==============
+[2016-07-04 13:04:38] REQUEST_URI: /min/?g=js
+[2016-07-04 13:04:38] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:04:38] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00038
+[2016-07-04 13:04:38] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:04:38] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:04:41 0.78001700]==============
+[2016-07-04 13:04:41] REQUEST_URI: /min//lj
+[2016-07-04 13:04:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:04:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00046
+[2016-07-04 13:04:41] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:04:41] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:04:49 0.97055100]==============
+[2016-07-04 13:04:49] REQUEST_URI: /min//jljlsdafasdf
+[2016-07-04 13:04:49] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:04:49] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+[2016-07-04 13:04:49] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:04:49] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:04:52 0.00619900]==============
+[2016-07-04 13:04:52] REQUEST_URI: /sdf//jljlsdafasdf
+[2016-07-04 13:04:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:04:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00030
+[2016-07-04 13:04:52] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-07-04 13:04:52] [log] Process: 0.022s ( Load:0.0s Init:0.003s Exec:0.016s Template:0.003s )
+Start Logging [2016-07-04 13:04:52 0.17422700]==============
+[2016-07-04 13:04:52] REQUEST_URI: /min/?g=css
+[2016-07-04 13:04:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:04:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00084
+[2016-07-04 13:04:52] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:04:52] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:04:52 0.28641000]==============
+[2016-07-04 13:04:52] REQUEST_URI: /min/?g=js
+[2016-07-04 13:04:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:04:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00029
+[2016-07-04 13:04:52] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:04:52] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:06:02 0.74785700]==============
+[2016-07-04 13:06:02] REQUEST_URI: /min/
+[2016-07-04 13:06:02] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:06:02] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00082
+[2016-07-04 13:06:02] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:06:02] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:06:38 0.27502900]==============
+[2016-07-04 13:06:38] REQUEST_URI: /min/
+[2016-07-04 13:06:38] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:06:38] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00052
+[2016-07-04 13:06:38] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:06:38] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.
+Start Logging [2016-07-04 13:06:43 0.69992600]==============
+[2016-07-04 13:06:43] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-07-04 13:06:43] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-07-04 13:06:43] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00044
+[2016-07-04 13:06:43] [notice] Notice:[2] include_once(minify/min/index.php): failed to open stream: No such file or directory minifylib.php at 22 row.
+[2016-07-04 13:06:43] [notice] Notice:[2] include_once(): Failed opening 'minify/min/index.php' for inclusion (include_path='.:') minifylib.php at 22 row.

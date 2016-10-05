@@ -1,0 +1,75 @@
+// 
+// Site page Settings.
+// --------------------------------------------------
+
+.ip-site-wrapper {
+    .make-row();
+    min-height: 520px;
+    
+    .ip-siteinfo-container, .ip-404-container {
+        .make-sm-column(8);
+        
+        & > h1 {
+            .ip-h1-lvl0();
+            text-align: center;
+        }
+        
+        section {
+            h1, h2 {
+                font-size: 1.2em;
+                display: inline-block;
+                color: @gray;
+            }
+            h2 {
+                font-size: 1.1em;
+            }
+        }
+    }
+    
+    .ip-404-container {
+        .error-details, .error-actions {
+            text-align: center;
+        }
+        
+        .error-actions {
+            .ip-btn {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    
+    .ip-aside-bar {
+        .hidden-xs();
+        .make-sm-column(4);
+        
+        h1 {
+            font-size: 1.2em;
+            color: @gray;
+            font-weight: bold;
+        }
+        
+        nav {
+            ul  {
+                list-style: none;
+                padding:0;
+                margin:0;
+                
+                li { 
+                    padding-left: 1em; 
+                    text-indent: -.7em;
+                    
+                    a {
+                        font-size: 1em;
+                        font-weight: bold;
+                        color: @gray;
+                    }
+                    
+                    &:before {
+                        content: "• ";
+                        color: @yellow-green;
+                    }
+                }
+            }
+        }
+    }
+}

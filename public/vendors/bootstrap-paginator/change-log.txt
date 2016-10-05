@@ -1,0 +1,5 @@
+===================================================================================
+bootstrap-paginator v1.0 - 06/17/2014
+
+dist:
+https://github.com/lyonlai/bootstrap-paginator

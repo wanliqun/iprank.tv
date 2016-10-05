@@ -1,0 +1,131 @@
+// 
+// Popular page Settings.
+// --------------------------------------------------
+.ip-popular-wrapper {
+    .make-row();
+    
+    .ip-popular-container {
+        .make-xs-column(12);
+        .make-sm-column(12);
+        .make-md-column(8);
+        padding: 20px 15px 0;
+        
+        ul.nav-tabs {
+            padding: 0 0 0 15px;
+            @media (max-width: @screen-sm-min) {
+                padding: 0 0 0 2px;
+            }
+            
+            li > a {
+                font-weight: normal;
+                color: @gray;
+                background: @nav-link-hover-bg;
+                margin-right: 10px;
+            }
+            
+            li.active > a { 
+                font-weight: bold;
+                color: @golden-rod-color;
+                border-color: @golden-rod-color @golden-rod-color transparent;
+                background: #fff;
+            }
+            
+            @media (max-width: @screen-xs-min) {
+                li {
+                    float: none;
+                }
+                
+                li.active > a { 
+                    border: 1px solid @golden-rod-color;
+                }
+            }
+            
+            li.filter {
+                .pull-right();
+                
+                 @media (max-width: @screen-xs-min) {
+                    .pull-left();
+                    margin-top: 15px;
+                }
+            }
+        }
+        
+        .ip_type_filter {
+            margin: 0;
+        }
+        
+        div.tab-content {
+            padding: 15px 0;
+            
+            .popular-post-cards {
+                .ip-post-cards();
+                
+                @media (max-width: @screen-xs-min) {
+                    .ip-article-md {
+                        .make-xs-column(12);
+                        padding-left: 0;
+                    }
+                }
+            }
+            
+            .tab-pane {
+                min-height: 25px;
+                position: relative;
+                
+                .loading-now {
+                    position: absolute;
+                    left:0; right:0;
+                    top: 0; bottom: 0;
+                    margin: auto;
+                }
+            }
+            
+            .popular-cover-img {
+                .img-responsive();
+                width: 100%;
+            }
+            
+            .article-header-h1 {
+                height: 1.2em;
+                overflow:hidden;
+                white-space:nowrap;
+                text-overflow:ellipsis;
+            }
+        }
+    }
+    
+    .ip-popular-aside-bar{
+        .make-xs-column(12);
+        .make-sm-column(12);
+        .make-md-column(4);
+        padding: 0 15px 0 5px;
+        @media (max-width: @screen-md-min) {
+            padding: 0 15px 0;
+        }
+        
+        .most-popular-posts {
+            .make-row();
+            margin: 0;
+            
+            header {
+                h1 {
+                    .ip-h1-lvl1();
+                    margin: 20px 0 15px;
+                }
+            }
+            
+            .article-popular-stream {
+                .ip-article-popular-stream();
+                
+                .ip-article-md { 
+                   padding: 0 15px 10px 0;
+                   
+                   @media (max-width: @screen-xs-min) {
+                        .make-xs-column(12);
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

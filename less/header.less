@@ -1,0 +1,135 @@
+// 
+// Header Settings.
+// --------------------------------------------------
+
+// navbar
+.ip-navbar {
+    .navbar();
+    .navbar-default();
+    .navbar-fixed-top();  
+    background-image: url("/public/images/navbar-bg.png");
+	background-repeat: repeat; 
+	border: 0;
+	.ip-box-shadow(0px 0px 2px 1px @gray-dark);
+	
+	.navbar-brand {
+        margin: 0;
+        padding: 7px 15px 7px 0px;
+    } 
+    
+    @media (max-width:@grid-float-breakpoint) {
+        .navbar-collapse.collapse {
+            .nav.navbar-nav {
+                li {
+                    .clearfix();
+                    #upload-btn {
+                        float: left;
+                    }
+                }
+            }
+        }
+    }
+    
+	.main-group a {
+	    font-family: 'Open Sans', @font-family-sans-serif;
+	    font-size: 16px;
+	}
+	
+	.navbar-form {
+	    margin:10px 0;
+	    
+	    @form-control-bg-color: fade(#EFEFEF, 95%);
+	    .form-control {
+	        font-size: 12px;
+	        background-color: @form-control-bg-color;
+	        border: 1px solid @navbar-default-link-color;
+	        @media (min-width: 1000px) { min-width: 200px; }
+	        @media (max-width: 999px) { min-width: 130px; }
+	    }
+	    
+	    .btn.btn-default {
+	        .button-variant(@btn-default-color;@form-control-bg-color;@navbar-default-link-color);
+	         &:hover, &:focus, &:active, &.active  {
+	            background-color: @navbar-default-link-hover-color;
+             }
+	    }
+	}
+	
+    #upload-btn {
+        .button-variant(@yellow-green; transparent; transparent);
+        padding: 5px 10px;
+        text-align: left;
+        
+	     &:hover, &:focus, &:active, &.active  {
+            color: @olive-green-dark;
+         };
+    }
+	
+	#login-signup-btn{
+	    .button-variant(@navbar-default-link-color; transparent; transparent);
+	    padding: 5px 10px;
+	    
+	     &:hover, &:focus, &:active, &.active  {
+            color: @navbar-default-link-hover-color;
+         }
+         margin: 8px 0;
+	}
+	
+	.nav-logined-block {
+	    margin: 8px 0;
+	    padding: 0 10px;
+	    position: relative;
+	    min-width: 124px;
+	    
+	    a.nav-userinfo-box {
+	        display: inline-block;
+	        font-size: 14px;
+	        color: @navbar-default-link-color;
+	        
+	        &:hover {
+	            color: @navbar-default-link-hover-color;
+            }
+            
+            span {
+                display: inline-block;
+            }
+            
+            .nav-useravatar {
+                .img-responsive();
+                width: 32px;
+                display: inline-block;
+                .ip-border-radius(50%);
+                overflow:hidden;
+                margin:auto;
+            }
+	    }
+	    
+	    .nav-user-dropmenu {
+	        display: none;
+	        position: absolute;
+	        top: 41px;
+            left: 0;
+            width: 100%;
+            background: @gray-light;
+            .ip-border-radius(0 0 4px 4px);
+            border: 1px solid @gray-lighter;
+            border-top: 3px solid @yellow-green;
+            padding: 5px 10px;
+            
+            ul {
+                padding: 0;
+                list-style-type: none;
+                
+                a {
+                    color: @gray;
+                    font-size: 12px;
+                }
+                
+                .sperator-line {
+                    margin: 3px -10px;
+                    border-top: 1px solid @gray-lighter;
+                }
+            }
+	    }
+	}
+}

@@ -1,0 +1,151 @@
+Start Logging [2016-04-26 07:39:04 0.04733600]==============
+[2016-04-26 07:39:04] REQUEST_URI: /
+[2016-04-26 07:39:04] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:04] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.02680
+[2016-04-26 07:39:04] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.01220
+[2016-04-26 07:39:04] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00710
+[2016-04-26 07:39:04] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.02907
+[2016-04-26 07:39:04] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00527
+[2016-04-26 07:39:04] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.04081
+[2016-04-26 07:39:04] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.51140
+[2016-04-26 07:39:04] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-04-26 07:39:04] [log] Process: 0.968s ( Load:0.0s Init:0.017s Exec:0.925s Template:0.026s )
+Start Logging [2016-04-26 07:39:05 0.16459900]==============
+[2016-04-26 07:39:05] REQUEST_URI: /min/?g=css
+[2016-04-26 07:39:05] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:05] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00051
+Start Logging [2016-04-26 07:39:05 0.44530500]==============
+[2016-04-26 07:39:05] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-04-26 07:39:05] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:05] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00059
+Start Logging [2016-04-26 07:39:05 0.53165300]==============
+[2016-04-26 07:39:05] REQUEST_URI: /min/?g=js
+[2016-04-26 07:39:05] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:05] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00037
+Start Logging [2016-04-26 07:39:08 0.52778300]==============
+[2016-04-26 07:39:08] REQUEST_URI: /signin
+[2016-04-26 07:39:08] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:08] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00047
+[2016-04-26 07:39:08] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-04-26 07:39:08] [log] Process: 0.047s ( Load:0.0s Init:0.017s Exec:0.027s Template:0.003s )
+Start Logging [2016-04-26 07:39:08 0.69089700]==============
+[2016-04-26 07:39:08] REQUEST_URI: /min/?g=css
+[2016-04-26 07:39:08] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:08] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00044
+Start Logging [2016-04-26 07:39:08 0.79709600]==============
+[2016-04-26 07:39:08] REQUEST_URI: /min/?f=member/signin.js&b=public/js
+[2016-04-26 07:39:08] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:08] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00033
+Start Logging [2016-04-26 07:39:18 0.80933300]==============
+[2016-04-26 07:39:18] REQUEST_URI: /?c=ajax&a=signin&format=json&redirect=http://demo.iprank.tv/
+[2016-04-26 07:39:18] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:18] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00044
+[2016-04-26 07:39:18] [notice] Notice:[8] Undefined index: trim validation.php at 222 row.
+[2016-04-26 07:39:18] [notice] Notice:[8] Undefined index: trim validation.php at 222 row.
+[2016-04-26 07:39:18] [log] Query SQL:SELECT * FROM `members` WHERE ((`email` = 'wanliqunn@163.com'))
+Use time:0.00265
+[2016-04-26 07:39:18] [log] Query SQL:SELECT * FROM `countries` WHERE ((`iso2` IN ('CN')))
+Use time:0.00892
+[2016-04-26 07:39:18] [notice] Notice:[2048] Only variables should be passed by reference libmember.php at 40 row.
+[2016-04-26 07:39:18] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-04-26 07:39:18] [log] Process: 0.176s ( Load:0.0s Init:0.060s Exec:0.073s Template:0.043s )
+Start Logging [2016-04-26 07:39:19 0.21201700]==============
+[2016-04-26 07:39:19] REQUEST_URI: /favicon.ico
+[2016-04-26 07:39:19] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:19] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00048
+[2016-04-26 07:39:19] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-04-26 07:39:19] [log] Process: 0.097s ( Load:0.0s Init:0.011s Exec:0.035s Template:0.051s )
+Start Logging [2016-04-26 07:39:29 0.97145700]==============
+[2016-04-26 07:39:29] REQUEST_URI: /signin
+[2016-04-26 07:39:29] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:29] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00036
+[2016-04-26 07:39:29] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-04-26 07:39:29] [log] Process: 0.042s ( Load:0.0s Init:0.004s Exec:0.029s Template:0.009s )
+Start Logging [2016-04-26 07:39:32 0.75751500]==============
+[2016-04-26 07:39:32] REQUEST_URI: /upload
+[2016-04-26 07:39:32] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:32] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00060
+[2016-04-26 07:39:32] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-04-26 07:39:32] [log] Process: 0.024s ( Load:0.0s Init:0.003s Exec:0.019s Template:0.002s )
+Start Logging [2016-04-26 07:39:32 0.88122900]==============
+[2016-04-26 07:39:32] REQUEST_URI: /min/?g=css
+[2016-04-26 07:39:32] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:32] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00375
+Start Logging [2016-04-26 07:39:32 0.96589100]==============
+[2016-04-26 07:39:32] REQUEST_URI: /min/?g=js
+[2016-04-26 07:39:32] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:32] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00256
+Start Logging [2016-04-26 07:39:33 0.03109000]==============
+[2016-04-26 07:39:33] REQUEST_URI: /min/?f=member/upload.js&b=public/js
+[2016-04-26 07:39:33] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:33] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00038
+Start Logging [2016-04-26 07:39:48 0.58777600]==============
+[2016-04-26 07:39:48] REQUEST_URI: /?c=ajax&a=add_ytvideo&format=json
+[2016-04-26 07:39:48] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:39:48] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00095
+[2016-04-26 07:39:48] [notice] Notice:[8] Undefined offset: 1 libyoutube.php at 14 row.
+[2016-04-26 07:39:48] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-04-26 07:39:48] [log] Process: 0.204s ( Load:0.0s Init:0.092s Exec:0.108s Template:0.004s )
+Start Logging [2016-04-26 07:40:15 0.66182300]==============
+[2016-04-26 07:40:15] REQUEST_URI: /?c=ajax&a=add_ytvideo&format=json
+[2016-04-26 07:40:15] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:40:15] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00079
+[2016-04-26 07:40:16] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-04-26 07:40:16] [log] Process: 1.097s ( Load:0.0s Init:0.052s Exec:1.020s Template:0.025s )
+Start Logging [2016-04-26 07:40:19 0.24510600]==============
+[2016-04-26 07:40:19] REQUEST_URI: /fill
+[2016-04-26 07:40:19] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:40:19] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00048
+[2016-04-26 07:40:21] [notice] Notice:[2048] Only variables should be passed by reference member.php at 140 row.
+[2016-04-26 07:40:21] [log] Query SQL:SELECT * FROM `channels`
+Use time:0.00961
+[2016-04-26 07:40:21] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-04-26 07:40:21] [log] Process: 2.729s ( Load:0.0s Init:0.005s Exec:2.691s Template:0.033s )
+Start Logging [2016-04-26 07:40:22 0.09685800]==============
+[2016-04-26 07:40:22] REQUEST_URI: /min/?g=css
+[2016-04-26 07:40:22] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:40:22] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00044
+Start Logging [2016-04-26 07:40:22 0.25117200]==============
+[2016-04-26 07:40:22] REQUEST_URI: /min/?g=js
+[2016-04-26 07:40:22] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:40:22] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00071
+Start Logging [2016-04-26 07:40:22 0.29355500]==============
+[2016-04-26 07:40:22] REQUEST_URI: /min/?f=twitter.js,bootstrap-tagsinput.min.js,member/fill_upload_detail.js&b=public/js
+[2016-04-26 07:40:22] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:40:22] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00049
+Start Logging [2016-04-26 07:40:22 0.71095500]==============
+[2016-04-26 07:40:22] REQUEST_URI: /?c=ajax&a=oauth_tw&format=json
+[2016-04-26 07:40:22] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-04-26 07:40:22] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00042
+[2016-04-26 07:40:22] [notice] Notice:[8] Undefined index: tw_token_credentials ajax.php at 442 row.
+[2016-04-26 07:40:22] [notice] Notice:[8] Undefined index: port OAuth.php at 385 row.
+[2016-04-26 07:40:22] [notice] Notice:[8] Undefined index: port OAuth.php at 385 row.
+[2016-04-26 07:40:25] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-04-26 07:40:25] [log] Process: 2.462s ( Load:0.0s Init:0.005s Exec:2.443s Template:0.014s )

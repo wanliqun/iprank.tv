@@ -1,0 +1,6 @@
+===================================================================================
+
+jquery.dotdotdot - 06/15/2014
+
+dist:
+https://codeload.github.com/BeSite/jQuery.dotdotdot/zip/master

@@ -1,0 +1,54 @@
+Start Logging [2015-02-19 02:06:34 0.36135300]==============
+[2015-02-19 02:06:34] REQUEST_URI: /channels/
+[2015-02-19 02:06:34] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-19 02:06:34] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00788
+[2015-02-19 02:06:34] [log] Query SQL:SELECT * FROM `channels` ORDER BY position DESC
+Use time:0.00543
+[2015-02-19 02:06:34] [log] Query SQL:(SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=1 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=2 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=3 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=4 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=11 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=12 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=13 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=5 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=6 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=7 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=8 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=9 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=10 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12)
+Use time:0.03819
+[2015-02-19 02:06:34] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2015-02-19 02:06:34] [log] Process: 0.200s ( Load:0.0s Init:0.029s Exec:0.146s Template:0.025s )
+Start Logging [2015-02-19 02:06:34 0.62312300]==============
+[2015-02-19 02:06:34] REQUEST_URI: /min/?g=css
+[2015-02-19 02:06:34] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-19 02:06:34] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00043
+Start Logging [2015-02-19 02:06:34 0.70625800]==============
+[2015-02-19 02:06:34] REQUEST_URI: /min/?f=bootstrap-paginator.min.js,slick.min.js&b=public/js
+[2015-02-19 02:06:34] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-19 02:06:34] [notice] Notice:[8] mysql_pconnect(): send of 5 bytes failed with errno=32 Broken pipe mysqladapter.php at 96 row.
+[2015-02-19 02:06:34] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00049
+Start Logging [2015-02-19 02:06:34 0.73853500]==============
+[2015-02-19 02:06:34] REQUEST_URI: /min/?g=js
+[2015-02-19 02:06:34] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-19 02:06:34] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00493
+Start Logging [2015-02-19 15:10:04 0.38327500]==============
+[2015-02-19 15:10:04] REQUEST_URI: /channels/
+[2015-02-19 15:10:04] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-19 15:10:04] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.01233
+[2015-02-19 15:10:04] [log] Query SQL:SELECT * FROM `channels` ORDER BY position DESC
+Use time:0.00138
+[2015-02-19 15:10:04] [log] Query SQL:(SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=1 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=2 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=3 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=4 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=11 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=12 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=13 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=5 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=6 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=7 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=8 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=9 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=10 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12)
+Use time:0.09310
+[2015-02-19 15:10:04] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2015-02-19 15:10:04] [log] Process: 0.299s ( Load:0.0s Init:0.041s Exec:0.224s Template:0.034s )
+Start Logging [2015-02-19 15:10:04 0.67996000]==============
+[2015-02-19 15:10:04] REQUEST_URI: /min/?g=css
+[2015-02-19 15:10:04] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-19 15:10:04] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00108
+Start Logging [2015-02-19 15:10:04 0.82619500]==============
+[2015-02-19 15:10:04] REQUEST_URI: /min/?f=bootstrap-paginator.min.js,slick.min.js&b=public/js
+[2015-02-19 15:10:04] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-19 15:10:04] [notice] Notice:[8] mysql_pconnect(): send of 5 bytes failed with errno=32 Broken pipe mysqladapter.php at 96 row.
+[2015-02-19 15:10:04] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00585
+Start Logging [2015-02-19 15:10:04 0.90784600]==============
+[2015-02-19 15:10:04] REQUEST_URI: /min/?g=js
+[2015-02-19 15:10:04] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-02-19 15:10:04] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041

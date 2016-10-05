@@ -1,0 +1,275 @@
+// 
+// Dialog Settings.
+// --------------------------------------------------
+.ip-dialog-wrapper {
+    .container-fluid();
+    
+    .ip-signup-fb-container {
+        header {
+            margin: 0 0 15px;
+            
+             h1 {
+                margin: 10px 0;
+                text-align:center;
+                font-size: 22px;
+                color: @gray-dark;
+                font-weight: bold;
+            }
+            
+            h2 {
+                margin: 10px 0;
+                font-size: 16px;
+                color: @gray;
+                font-weight: normal;
+                text-align:center;
+            }
+            
+            .greeting-container {
+                display: table;
+                margin: 0 auto;
+                
+                .greeting-words {
+                    font-size: 18px;
+                    color: @gray-dark;
+                    font-weight: bold;
+                    display: inline-block;
+                    display:-moz-inline-stack;
+                    display:inline-block;
+                    zoom:1;
+                    *display:inline;
+                }
+                
+                .fb-thumbnail {
+                    .img-responsive();
+                    width: 48px;
+                    display: inline-block;
+                    display:-moz-inline-stack;
+                    display:inline-block;
+                    zoom:1;
+                    *display:inline;
+                }
+            }
+        }
+        
+        .signup-fb-container {
+            #signup-fb-form {
+                .common-form();
+                
+                .input-group{ 
+                    .input-group-addon {
+                        width: 36% !important;
+                    }
+                }
+                
+                .btn-signup {
+                    display: table;
+                    margin: 25px auto;
+                }
+                
+                .error-tip {
+                    color: @blood-red;
+                } 
+            }
+        }
+    }
+    
+    .ip-loginbox-container {
+        h1 {
+            margin: -25px 0 15px;
+            font-size: 22px;
+            color: @gray-dark;
+            font-weight: bold;
+            padding-left: 40px;
+        }
+        
+        .signin-area {
+            .fb-signin-wrapper {
+                .fb-signin-button {
+                    position: relative;
+                    
+                    .btn-fb-signin {
+                        padding: 0;
+                        border-width: 0;
+                    }
+                    
+                     .fb-connect-loading {
+                        position: absolute;
+                        left: 45%;
+                        top: 25%;
+                    }
+                }
+            }
+            
+            .email-signin-wrapper {
+                margin: 20px 0 0;
+                
+                #signin-form {
+                    .common-form();
+                    
+                    width: 251px;
+                    padding-top: 15px;
+                    border: 1px solid @gray-light2;
+                    border-style: solid none none none;
+                    position: relative;
+                    
+                    .form-group, .input-group {
+                        width: 100%;
+                    }
+                    
+                    .forgot-password-hint {
+                        margin: -15px 0 10px;
+                        text-align: right;
+                        font-size: 12px;
+                    }
+                    
+                    .btn-signin {
+                        width: 251px;
+                        margin-top: 10px;
+                    }
+                    
+                    .error-tip {
+                        color: red;
+                    }
+                    
+                     &:before {
+                        content: "OR";
+                        position: absolute;
+                        .ip-border-radius(50%);
+                        border: 1px solid transparent;
+                        padding: 5px;
+                        top: -17px;
+                        left: 40%;
+                        color: @gray;
+                        background-color: #E8E8E8;
+                        font-weight: bold;
+                        
+                        .hidden-xs();
+                    }
+                }
+            }
+        }
+        
+        .signup-area {
+            .signup-hint {
+                width: 251px;
+                text-align: right;
+                padding-top: 5px;
+                margin-top: 10px;
+                
+                border: 1px solid @gray-light2;
+                border-style: solid none none none;
+                
+                span {
+                    font-size: 12px;
+                    color: @gray;
+                }
+            }
+        }
+    }
+    
+    .ip-reset-pwd-container {
+        width: 100%;
+        @media (max-width: @screen-xs-min) {
+            min-width: 280px;
+        }
+        
+        header {
+            margin: 0 0 10px;
+            
+             h1 {
+                margin: -25px 0 5px;
+                font-size: 22px;
+                color: @gray-dark;
+                font-weight: bold;
+            }
+            
+            .forgot-pwd-tip {
+                color: @gray;
+            }
+        }
+        
+        #reset-pwd-form {
+            .common-form();
+            width: 452px;
+            
+            .form-group, .input-group {
+                width: 100%;
+                margin: 0 0 5px;
+            }
+            
+            .email-errtip {
+                .pull-right();
+                font-size: 11px;
+                display:none;
+            }
+            
+            .resetpwd-success-tip {
+                clear: both;
+                font-size: 11px;
+                display:none;
+            }
+            
+            .btn-reset-pwd {
+                clear: both;
+                .pull-right();
+                margin: 20px 0 0;
+            }
+            
+            @media (max-width: @screen-xs-min) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.fb-connecting-dialog {
+    .ip-bootstrap-dialog();
+    
+    .modal-dialog {
+        width: 600px;
+        margin-top: 80px;
+        
+        .dialog-msg-body {
+            text-align: center;
+        }
+    }
+}
+
+.login-box-dialog {
+    .ip-bootstrap-dialog();
+    right: 0;
+    
+    .modal-dialog {
+        width: 310px;
+        margin-top: 50px;
+        float: right;
+        
+        .modal-body {
+            padding-top: 0;
+        }
+    }
+}
+
+.reset-pwd-dialog {
+    .ip-bootstrap-dialog();
+    height: 100%;
+    
+    .modal-dialog {
+        width: 516px;
+        position: relative;
+        margin: 0 auto;
+        top: 35%;
+        
+        .modal-body {
+            padding-top: 0;
+        }
+    }
+    
+    @media (max-width: @screen-xs-min) {
+        width: 100%;
+        .modal-dialog {
+            width: 100%;
+        }
+    }
+}
+

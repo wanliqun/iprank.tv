@@ -1,0 +1,36 @@
+Start Logging [2015-01-20 13:46:05 0.68980900]==============
+[2015-01-20 13:46:05] REQUEST_URI: /channel/10-how-to-prank
+[2015-01-20 13:46:05] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-01-20 13:46:05] [notice] Notice:[8] mysql_pconnect(): send of 5 bytes failed with errno=32 Broken pipe mysqladapter.php at 96 row.
+[2015-01-20 13:46:05] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.01515
+[2015-01-20 13:46:05] [log] Query SQL:SELECT * FROM `channels` WHERE ((`pk_id` = '10'))
+Use time:0.01144
+[2015-01-20 13:46:05] [notice] Notice:[8] Undefined index: join modelpager.php at 112 row.
+[2015-01-20 13:46:05] [log] Query SQL:SELECT COUNT(*) AS `cl_count` FROM `posts` WHERE ((`fk_channel_id` = '10' AND `status` = 1))
+Use time:0.00639
+[2015-01-20 13:46:05] [notice] Notice:[2] Invalid argument supplied for foreach() poststatistics.php at 22 row.
+[2015-01-20 13:46:05] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics`
+Use time:0.02969
+[2015-01-20 13:46:05] [notice] Notice:[2] Invalid argument supplied for foreach() poststatistics.php at 27 row.
+[2015-01-20 13:46:05] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2015-01-20 13:46:05] [notice] Notice:[2] array_chunk() expects parameter 1 to be array, null given view.php at 36 row.
+[2015-01-20 13:46:05] [notice] Notice:[2] Invalid argument supplied for foreach() view.php at 37 row.
+[2015-01-20 13:46:05] [log] Process: 0.261s ( Load:0.0s Init:0.026s Exec:0.230s Template:0.005s )
+Start Logging [2015-01-20 13:46:06 0.25551300]==============
+[2015-01-20 13:46:06] REQUEST_URI: /min/?g=css
+[2015-01-20 13:46:06] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-01-20 13:46:06] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00028
+Start Logging [2015-01-20 13:46:06 0.32814800]==============
+[2015-01-20 13:46:06] REQUEST_URI: /min/?g=js
+[2015-01-20 13:46:06] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-01-20 13:46:06] [notice] Notice:[8] mysql_pconnect(): send of 5 bytes failed with errno=32 Broken pipe mysqladapter.php at 96 row.
+[2015-01-20 13:46:06] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00102
+Start Logging [2015-01-20 13:46:06 0.48003600]==============
+[2015-01-20 13:46:06] REQUEST_URI: /min/?f=bootstrap-paginator.min.js&b=public/js
+[2015-01-20 13:46:06] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2015-01-20 13:46:06] [notice] Notice:[8] mysql_pconnect(): send of 5 bytes failed with errno=32 Broken pipe mysqladapter.php at 96 row.
+[2015-01-20 13:46:06] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00068

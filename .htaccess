@@ -1,0 +1,79 @@
+AddType text/x-component .htc
+
+<FilesMatch "\.(bak|inc|lib|sh|tpl|lbi|dwt)$">
+    order deny,allow
+    deny from all
+</FilesMatch>
+
+ErrorDocument 404 /404
+
+## MOD REWRITE ##
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Rewrite domain
+   	RewriteCond %{HTTP_HOST} !^(www|demo)\.([a-z1-9\-]+)\.([a-z]+)$ [NC] [and]
+   	RewriteCond %{HTTP_HOST} ([a-z1-9\-]+)\.([a-z]+)$ [NC] 
+   	RewriteRule ^(.*)$ http://www.%1.%2/$1 [R=301,L]
+   	
+	# Rewrite url
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !^(.+)\.css$
+    RewriteCond %{REQUEST_FILENAME} !^(.+)\.js$
+    RewriteCond %{REQUEST_FILENAME} !^(.+)\.png$
+    RewriteCond %{REQUEST_FILENAME} !^(.+)\.jpg$
+    RewriteCond %{REQUEST_FILENAME} !^(.+)\.gif$
+    RewriteCond %{REQUEST_FILENAME} !^(.+)\.ico$
+    RewriteCond %{REQUEST_URI} !^/data/(.+)$
+    RewriteCond %{REQUEST_URI} !^/public/(.+)$
+    #Rewrite /popular
+    RewriteRule ^popular/?$	index.php?c=popular [QSA,NC,L]
+    #Rewrite /channels
+    RewriteRule ^channels/?$ index.php?c=channel [QSA,NC,L]
+    #Rewrite /channel/chid-chname
+    RewriteRule ^channel/([0-9]+)-(.*)/?$ index.php?c=channel&a=view&id=$1&name=$2 [QSA,NC,L]
+    #Rewrite /video/pid or /_video/pid
+    RewriteRule ^(_{0,1})(video)/([0-9]+)-(.*)/?$ index.php?c=post&a=$1view&type=$2&id=$3&name=$4 [QSA,NC,L]
+    #Rewrite /search
+    RewriteRule ^search/?$ index.php?c=post&a=search [QSA,NC,L]
+    #Rewrite /signin or /signup or /signoff
+    RewriteRule ^(signin|signup|signoff)/?$ index.php?c=member&a=$1 [QSA,NC,L]
+    #Rewrite /activate/code
+    RewriteRule ^activate/(.*)/?$ index.php?c=member&a=activate&code=$1 [QSA,NC,L]
+    #Rewrite /reset/token
+    RewriteRule ^reset/(.*)/?$ index.php?c=member&a=reset_password&token=$1 [QSA,NC,L]
+    #Rewrite /upload
+    RewriteRule ^upload/?$ index.php?c=member&a=upload [QSA,NC,L]
+    #Rewrite /fill
+    RewriteRule ^fill/?$ index.php?c=member&a=fill_upload_detail [QSA,NC,L]
+    #Rewrite /profile/username
+    RewriteRule ^profile/(.*)/?$ index.php?c=member&a=profile&name=$1 [QSA,NC,L]
+    #Rewrite /edit/pid
+    RewriteRule ^edit/([0-9]+)/?$ index.php?c=member&a=edit_post&pid=$1 [QSA,NC,L]
+    #Rewrite /404
+    RewriteRule ^404/?$ index.php?c=site&a=page_not_found [QSA,NC,L]
+    #Rewrite /about or /faq or /tou or /privacy
+    RewriteRule ^(about|faq|tou|privacy)/?$ index.php?c=site&a=$1 [QSA,NC,L]
+    #Rewrite /min
+    RewriteRule ^min index.php?c=min [QSA,NC,L]
+</IfModule>
+## MOD REWRITE ##
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access 30 days"
+    ExpiresByType image/jpeg "access 30 days"
+    ExpiresByType image/gif "access 30 days"
+    ExpiresByType image/png "access 30 days"
+    ExpiresByType text/css "access 15 days"
+    ExpiresByType text/x-javascript "access 15 days"
+    ExpiresByType application/x-shockwave-flash "access 15 days"
+    ExpiresByType image/x-icon "access 30 days"
+    ExpiresDefault "access 7 days"
+</IfModule>
+## EXPIRES CACHING ##
+
+ErrorDocument 500 "<h2>Application error</h2>COOLPHP application failed to start properly"

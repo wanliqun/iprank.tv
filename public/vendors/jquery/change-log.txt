@@ -1,0 +1,11 @@
+===================================================================================
+jquery V1.11.1 - 05/29/2014
+
+dist:
+http://code.jquery.com/jquery-1.11.1.min.js
+
+dev:
+http://code.jquery.com/jquery-1.11.1.js
+
+map:
+http://code.jquery.com/jquery-1.11.1.min.map

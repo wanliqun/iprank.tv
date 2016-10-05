@@ -1,0 +1,14 @@
+#
+# robots.txt for COOLPHP
+# http://coolphp.itbeing.com
+
+User-agent: *
+Disallow: /admin/
+Disallow: /data/
+Disallow: /public/
+Disallow: /app/
+Disallow: /cmd/
+Disallow: /admin.php?c=home*
+Disallow: /*mobile=yes*
+
+Sitemap: http://www.iprank.tv/sitemap.xml

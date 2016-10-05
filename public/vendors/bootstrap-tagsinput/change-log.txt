@@ -1,0 +1,5 @@
+===================================================================================
+bootstrap-tagsinput v0.4.2 - 11/17/2014
+
+dist:
+http://timschlechter.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.zip

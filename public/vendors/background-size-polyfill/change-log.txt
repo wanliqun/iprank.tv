@@ -1,0 +1,6 @@
+===================================================================================
+
+background-size-polyfill v0.2.0 - 11/13/2014
+
+dist:
+https://github.com/louisremi/background-size-polyfill/archive/gh-pages.zip

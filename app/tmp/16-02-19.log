@@ -1,0 +1,160 @@
+Start Logging [2016-02-19 15:06:29 0.77694800]==============
+[2016-02-19 15:06:29] REQUEST_URI: /
+[2016-02-19 15:06:29] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:06:29] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.01991
+[2016-02-19 15:06:30] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.04663
+[2016-02-19 15:06:30] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00632
+[2016-02-19 15:06:30] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.03975
+[2016-02-19 15:06:30] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00593
+[2016-02-19 15:06:30] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.01006
+[2016-02-19 15:06:32] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:1.80572
+[2016-02-19 15:06:32] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-02-19 15:06:32] [log] Process: 2.433s ( Load:0.0s Init:0.097s Exec:2.304s Template:0.031s )
+Start Logging [2016-02-19 15:06:32 0.22776000]==============
+[2016-02-19 15:06:32] REQUEST_URI: /min/?g=css
+[2016-02-19 15:06:32] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:06:32] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00035
+Start Logging [2016-02-19 15:06:32 0.34368400]==============
+[2016-02-19 15:06:32] REQUEST_URI: /min/?g=js
+[2016-02-19 15:06:32] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:06:32] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00063
+Start Logging [2016-02-19 15:06:32 0.44982600]==============
+[2016-02-19 15:06:32] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-02-19 15:06:32] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:06:32] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00059
+Start Logging [2016-02-19 15:06:35 0.31973500]==============
+[2016-02-19 15:06:35] REQUEST_URI: /?c=js&a=post_actionbox&postids=45131%2C45145%2C45140%2C45177%2C45128%2C45127%2C45117%2C45110%2C45115%2C45088%2C45099%2C45089%2C45092%2C45094%2C45090%2C45095%2C45035%2C45056%2C45074%2C45041%2C45028%2C45011%2C45010%2C44465%2C44444%2C43796%2C44082%2C43945%2C44424%2C44425&_=1455894395233
+[2016-02-19 15:06:35] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:06:35] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00071
+[2016-02-19 15:06:35] [log] Query SQL:SELECT * FROM `liked_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `fk_post_id` IN ('45131','45145','45140','45177','45128','45127','45117','45110','45115','45088','45099','45089','45092','45094','45090','45095','45035','45056','45074','45041','45028','45011','45010','44465','44444','43796','44082','43945','44424','44425')))
+Use time:0.00816
+[2016-02-19 15:06:35] [log] Query SQL:SELECT * FROM `favorited_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `fk_post_id` IN ('45131','45145','45140','45177','45128','45127','45117','45110','45115','45088','45099','45089','45092','45094','45090','45095','45035','45056','45074','45041','45028','45011','45010','44465','44444','43796','44082','43945','44424','44425')))
+Use time:0.00326
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45131 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45145 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45140 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45177 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45128 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45127 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45117 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45110 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45115 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45088 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45099 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45089 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45092 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45094 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45090 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45095 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45035 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45056 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45074 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45041 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45028 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45011 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 45010 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 44465 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 44444 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 43796 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 44082 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 43945 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 44424 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[8] Undefined offset: 44425 js.php at 29 row.
+[2016-02-19 15:06:35] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-02-19 15:06:35] [log] Process: 0.112s ( Load:0.0s Init:0.007s Exec:0.076s Template:0.029s )
+Start Logging [2016-02-19 15:08:53 0.92372400]==============
+[2016-02-19 15:08:53] REQUEST_URI: /
+[2016-02-19 15:08:53] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:08:53] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.01004
+[2016-02-19 15:08:54] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.04573
+[2016-02-19 15:08:54] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00413
+[2016-02-19 15:08:54] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.02783
+[2016-02-19 15:08:54] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00336
+[2016-02-19 15:08:54] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.05017
+[2016-02-19 15:08:54] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.47372
+[2016-02-19 15:08:54] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-02-19 15:08:54] [log] Process: 0.826s ( Load:0.0s Init:0.017s Exec:0.785s Template:0.024s )
+Start Logging [2016-02-19 15:08:54 0.82160100]==============
+[2016-02-19 15:08:54] REQUEST_URI: /min/?g=css
+[2016-02-19 15:08:54] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:08:54] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00030
+Start Logging [2016-02-19 15:08:54 0.88538700]==============
+[2016-02-19 15:08:54] REQUEST_URI: /min/?g=js
+[2016-02-19 15:08:54] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:08:54] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.01454
+Start Logging [2016-02-19 15:08:55 0.02046000]==============
+[2016-02-19 15:08:55] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-02-19 15:08:55] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:08:55] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00096
+Start Logging [2016-02-19 15:08:55 0.65648700]==============
+[2016-02-19 15:08:55] REQUEST_URI: /min/?g=js
+[2016-02-19 15:08:55] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:08:55] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00090
+Start Logging [2016-02-19 15:08:55 0.87742700]==============
+[2016-02-19 15:08:55] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-02-19 15:08:55] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:08:55] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00050
+Start Logging [2016-02-19 15:08:56 0.14668300]==============
+[2016-02-19 15:08:56] REQUEST_URI: /?c=js&a=post_actionbox&postids=45131%2C45145%2C45140%2C45177%2C45128%2C45127%2C45117%2C45110%2C45115%2C45088%2C45099%2C45089%2C45092%2C45094%2C45090%2C45095%2C45035%2C45056%2C45074%2C45041%2C45028%2C45011%2C45010%2C44465%2C44444%2C43796%2C44082%2C43945%2C44424%2C44425&_=1455894535826
+[2016-02-19 15:08:56] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-19 15:08:56] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00065
+[2016-02-19 15:08:56] [log] Query SQL:SELECT * FROM `liked_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `fk_post_id` IN ('45131','45145','45140','45177','45128','45127','45117','45110','45115','45088','45099','45089','45092','45094','45090','45095','45035','45056','45074','45041','45028','45011','45010','44465','44444','43796','44082','43945','44424','44425')))
+Use time:0.00134
+[2016-02-19 15:08:56] [log] Query SQL:SELECT * FROM `favorited_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `fk_post_id` IN ('45131','45145','45140','45177','45128','45127','45117','45110','45115','45088','45099','45089','45092','45094','45090','45095','45035','45056','45074','45041','45028','45011','45010','44465','44444','43796','44082','43945','44424','44425')))
+Use time:0.00418
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45131 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45145 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45140 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45177 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45128 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45127 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45117 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45110 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45115 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45088 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45099 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45089 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45092 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45094 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45090 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45095 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45035 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45056 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45074 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45041 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45028 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45011 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 45010 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 44465 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 44444 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 43796 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 44082 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 43945 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 44424 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[8] Undefined offset: 44425 js.php at 29 row.
+[2016-02-19 15:08:56] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-02-19 15:08:56] [log] Process: 0.104s ( Load:0.0s Init:0.015s Exec:0.081s Template:0.008s )

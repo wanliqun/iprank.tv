@@ -1,0 +1,1 @@
+../vendors/jquery.rule/jquery.rule.js

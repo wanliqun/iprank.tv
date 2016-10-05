@@ -1,0 +1,5 @@
+===================================================================================
+bootstrap-nav-wizard v0.0.3 - 06/19/2014
+
+dist:
+https://github.com/acornejo/bootstrap-nav-wizard

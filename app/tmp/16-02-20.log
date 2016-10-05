@@ -1,0 +1,173 @@
+Start Logging [2016-02-20 01:26:20 0.12289700]==============
+[2016-02-20 01:26:20] REQUEST_URI: /popular/
+[2016-02-20 01:26:20] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-20 01:26:20] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.02441
+[2016-02-20 01:26:20] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_viewed` + ps.`newly_viewed`) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY (ps.`default_viewed` + ps.`newly_viewed`) DESC, ps.`created_at` DESC LIMIT 0, 60;		
+Use time:0.43328
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:20] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:21] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.37631
+[2016-02-20 01:26:21] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-02-20 01:26:21] [log] Process: 1.030s ( Load:0.0s Init:0.024s Exec:0.976s Template:0.030s )
+Start Logging [2016-02-20 01:26:21 0.37650100]==============
+[2016-02-20 01:26:21] REQUEST_URI: /min/?g=css
+[2016-02-20 01:26:21] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-20 01:26:21] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00032
+Start Logging [2016-02-20 01:26:21 0.44405900]==============
+[2016-02-20 01:26:21] REQUEST_URI: /min/?g=js
+[2016-02-20 01:26:21] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-20 01:26:21] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00700
+Start Logging [2016-02-20 01:26:21 0.63030400]==============
+[2016-02-20 01:26:21] REQUEST_URI: /min/?f=jquery.dotdotdot.min.js,bootstrap-paginator.min.js,bootstrap-select.min.js,popular.js&b=public/js
+[2016-02-20 01:26:21] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-20 01:26:21] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00058
+Start Logging [2016-02-20 01:26:25 0.14728900]==============
+[2016-02-20 01:26:25] REQUEST_URI: /channels/
+[2016-02-20 01:26:25] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-20 01:26:25] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00033
+[2016-02-20 01:26:25] [log] Query SQL:SELECT * FROM `channels` ORDER BY position DESC
+Use time:0.00895
+[2016-02-20 01:26:25] [log] Query SQL:(SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=1 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=2 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=3 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=4 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=11 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=12 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=13 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=5 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=6 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=7 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=8 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=9 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=10 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12)
+Use time:0.11344
+[2016-02-20 01:26:25] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-02-20 01:26:25] [log] Process: 0.169s ( Load:0.0s Init:0.003s Exec:0.137s Template:0.028s )
+Start Logging [2016-02-20 01:26:25 0.46621300]==============
+[2016-02-20 01:26:25] REQUEST_URI: /min/?f=bootstrap-paginator.min.js,slick.min.js&b=public/js
+[2016-02-20 01:26:25] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-20 01:26:25] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+Start Logging [2016-02-20 01:26:26 0.80809300]==============
+[2016-02-20 01:26:26] REQUEST_URI: /popular/
+[2016-02-20 01:26:26] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-02-20 01:26:26] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00345
+[2016-02-20 01:26:27] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_viewed` + ps.`newly_viewed`) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY (ps.`default_viewed` + ps.`newly_viewed`) DESC, ps.`created_at` DESC LIMIT 0, 60;		
+Use time:0.24179
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-02-20 01:26:27] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.32545
+[2016-02-20 01:26:27] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-02-20 01:26:27] [log] Process: 0.609s ( Load:0.0s Init:0.005s Exec:0.598s Template:0.006s )

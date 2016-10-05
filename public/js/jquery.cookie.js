@@ -1,0 +1,1 @@
+../vendors/jquery-cookie/jquery.cookie.js

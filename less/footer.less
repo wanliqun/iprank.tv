@@ -1,0 +1,63 @@
+// 
+// Footer Settings.
+// --------------------------------------------------
+.ip-footer { 
+    .container();
+    background-color: #2E3133;
+	.ip-box-shadow(0px 0px 2px 1px @gray-dark);
+	
+	.intro-nav {
+	    margin: 15px 0 0 0;
+	    display:inline-block;
+	    vertical-align: top;
+	    
+        a {
+            font-size: 0.9em;
+	        color: @gray-lighter;
+	        text-decoration: underline;
+	        
+	        &:hover, &:focus {
+                color: #fff;
+            }
+	    }
+	    
+	    .list-inline {
+	        margin: 0;
+	        font-weight: bold;
+	        
+	        .link-seperator {
+	            color: @gray;
+	        }
+	    }
+    }
+    
+    .social-banner {
+	    margin: 15px 0 0 15px;
+	    display:inline-block;
+	    vertical-align: top;
+	    
+	    .fb-like-wrapper {
+	        .pull-left();
+	    }
+	    
+	    .tw-follow-wrapper {
+	        .pull-left();
+	        margin: 0 0 0 15px;
+	    }
+	    
+	    @media (max-width: @screen-md-min) {
+	        margin-left: 0;
+	        
+	        .fb-like-wrapper, .tw-follow-wrapper {
+    	        margin: 0 0 10px 0;
+    	    }
+        }
+	}
+	
+	.copyright {
+	    margin: 0 0 15px 0;
+	    padding: 0;
+	    color: @gray-light;
+	    font-size: 0.85em;
+	}
+}

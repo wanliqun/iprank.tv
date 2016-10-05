@@ -1,0 +1,6 @@
+===================================================================================
+
+jsTimezoneDetect v1.0.4 - 07/05/2014
+
+dist:
+https://bitbucket.org/pellepim/jstimezonedetect

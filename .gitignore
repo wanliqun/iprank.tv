@@ -1,0 +1,14 @@
+# Package Files #
+*.jar
+*.war
+*.ear
+                                                                                
+.DS_Store                                                                       
+.gradle/                                                                        
+bin/                                                                            
+build/ 
+target/
+
+.settings  
+generator/src
+.classpath.rej

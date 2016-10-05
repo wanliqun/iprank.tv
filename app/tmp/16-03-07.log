@@ -1,0 +1,1895 @@
+Start Logging [2016-03-07 00:22:40 0.20377600]==============
+[2016-03-07 00:22:40] REQUEST_URI: /
+[2016-03-07 00:22:40] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 00:22:40] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00717
+[2016-03-07 00:22:40] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00958
+[2016-03-07 00:22:40] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00603
+[2016-03-07 00:22:40] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.02840
+[2016-03-07 00:22:40] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00439
+[2016-03-07 00:22:40] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00685
+[2016-03-07 00:22:40] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.59041
+[2016-03-07 00:22:40] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 00:22:40] [log] Process: 0.819s ( Load:0.0s Init:0.013s Exec:0.787s Template:0.018s )
+Start Logging [2016-03-07 00:22:41 0.02017800]==============
+[2016-03-07 00:22:41] REQUEST_URI: /
+[2016-03-07 00:22:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 00:22:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00071
+[2016-03-07 00:22:41] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00115
+[2016-03-07 00:22:41] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00095
+[2016-03-07 00:22:41] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00581
+[2016-03-07 00:22:41] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00131
+[2016-03-07 00:22:41] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00075
+[2016-03-07 00:22:41] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.42645
+[2016-03-07 00:22:41] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 00:22:41] [log] Process: 1.385s ( Load:0.0s Init:0.868s Exec:0.508s Template:0.010s )
+Start Logging [2016-03-07 00:22:41 0.51942000]==============
+[2016-03-07 00:22:41] REQUEST_URI: /min/?g=css
+[2016-03-07 00:22:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 00:22:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00029
+Start Logging [2016-03-07 00:22:41 0.55256200]==============
+[2016-03-07 00:22:41] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-03-07 00:22:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 00:22:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00063
+Start Logging [2016-03-07 00:22:41 0.63614400]==============
+[2016-03-07 00:22:41] REQUEST_URI: /min/?g=js
+[2016-03-07 00:22:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 00:22:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00095
+Start Logging [2016-03-07 00:24:18 0.37561500]==============
+[2016-03-07 00:24:18] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-03-07 00:24:18] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 00:24:18] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00072
+Start Logging [2016-03-07 00:24:18 0.58733200]==============
+[2016-03-07 00:24:18] REQUEST_URI: /?c=js&a=post_actionbox&postids=45131%2C45145%2C45140%2C45177%2C45128%2C45127%2C45117%2C45110%2C45115%2C45088%2C45099%2C45089%2C45092%2C45094%2C45090%2C45095%2C45035%2C45056%2C45074%2C45041%2C45028%2C45011%2C45010%2C44465%2C44444%2C43796%2C44082%2C43945%2C44424%2C44425&_=1457310258286
+[2016-03-07 00:24:18] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 00:24:18] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00087
+[2016-03-07 00:24:18] [log] Query SQL:SELECT * FROM `liked_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `fk_post_id` IN ('45131','45145','45140','45177','45128','45127','45117','45110','45115','45088','45099','45089','45092','45094','45090','45095','45035','45056','45074','45041','45028','45011','45010','44465','44444','43796','44082','43945','44424','44425')))
+Use time:0.00560
+[2016-03-07 00:24:18] [log] Query SQL:SELECT * FROM `favorited_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `fk_post_id` IN ('45131','45145','45140','45177','45128','45127','45117','45110','45115','45088','45099','45089','45092','45094','45090','45095','45035','45056','45074','45041','45028','45011','45010','44465','44444','43796','44082','43945','44424','44425')))
+Use time:0.00241
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45131 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45145 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45140 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45177 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45128 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45127 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45117 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45110 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45115 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45088 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45099 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45089 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45092 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45094 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45090 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45095 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45035 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45056 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45074 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45041 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45028 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45011 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 45010 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 44465 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 44444 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 43796 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 44082 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 43945 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 44424 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[8] Undefined offset: 44425 js.php at 29 row.
+[2016-03-07 00:24:18] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 00:24:18] [log] Process: 0.099s ( Load:0.0s Init:0.006s Exec:0.068s Template:0.025s )
+Start Logging [2016-03-07 01:04:47 0.12766500]==============
+[2016-03-07 01:04:47] REQUEST_URI: /
+[2016-03-07 01:04:47] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:47] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00325
+[2016-03-07 01:04:47] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.01037
+[2016-03-07 01:04:47] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00334
+[2016-03-07 01:04:47] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.03723
+[2016-03-07 01:04:47] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00199
+[2016-03-07 01:04:47] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.01099
+[2016-03-07 01:04:47] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.45470
+[2016-03-07 01:04:47] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 01:04:47] [log] Process: 0.756s ( Load:0.0s Init:0.045s Exec:0.697s Template:0.014s )
+Start Logging [2016-03-07 01:04:47 0.82081200]==============
+[2016-03-07 01:04:47] REQUEST_URI: /
+[2016-03-07 01:04:47] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:47] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00056
+[2016-03-07 01:04:47] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00080
+[2016-03-07 01:04:47] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00045
+[2016-03-07 01:04:47] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.00360
+[2016-03-07 01:04:47] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00084
+[2016-03-07 01:04:47] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00068
+[2016-03-07 01:04:48] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.35849
+[2016-03-07 01:04:48] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 01:04:48] [log] Process: 1.133s ( Load:0.0s Init:0.735s Exec:0.388s Template:0.010s )
+Start Logging [2016-03-07 01:04:48 0.29483400]==============
+[2016-03-07 01:04:48] REQUEST_URI: /min/?g=css
+[2016-03-07 01:04:48] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:48] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00037
+Start Logging [2016-03-07 01:04:48 0.35831300]==============
+[2016-03-07 01:04:48] REQUEST_URI: /min/?g=js
+[2016-03-07 01:04:48] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:48] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00152
+Start Logging [2016-03-07 01:04:48 0.44886000]==============
+[2016-03-07 01:04:48] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-03-07 01:04:48] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:48] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00057
+Start Logging [2016-03-07 01:04:49 0.37087100]==============
+[2016-03-07 01:04:49] REQUEST_URI: /min/?g=js
+[2016-03-07 01:04:49] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:49] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00047
+Start Logging [2016-03-07 01:04:50 0.10419800]==============
+[2016-03-07 01:04:50] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-03-07 01:04:50] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:50] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00143
+Start Logging [2016-03-07 01:04:50 0.25216400]==============
+[2016-03-07 01:04:50] REQUEST_URI: /?c=js&a=post_actionbox&postids=45131%2C45145%2C45140%2C45177%2C45128%2C45127%2C45117%2C45110%2C45115%2C45088%2C45099%2C45089%2C45092%2C45094%2C45090%2C45095%2C45035%2C45056%2C45074%2C45041%2C45028%2C45011%2C45010%2C44465%2C44444%2C43796%2C44082%2C43945%2C44424%2C44425&_=1457312690043
+[2016-03-07 01:04:50] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:50] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00045
+[2016-03-07 01:04:50] [log] Query SQL:SELECT * FROM `liked_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `fk_post_id` IN ('45131','45145','45140','45177','45128','45127','45117','45110','45115','45088','45099','45089','45092','45094','45090','45095','45035','45056','45074','45041','45028','45011','45010','44465','44444','43796','44082','43945','44424','44425')))
+Use time:0.00108
+[2016-03-07 01:04:50] [log] Query SQL:SELECT * FROM `favorited_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `fk_post_id` IN ('45131','45145','45140','45177','45128','45127','45117','45110','45115','45088','45099','45089','45092','45094','45090','45095','45035','45056','45074','45041','45028','45011','45010','44465','44444','43796','44082','43945','44424','44425')))
+Use time:0.00108
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45131 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45145 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45140 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45177 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45128 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45127 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45117 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45110 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45115 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45088 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45099 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45089 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45092 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45094 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45090 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45095 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45035 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45056 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45074 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45041 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45028 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45011 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 45010 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 44465 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 44444 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 43796 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 44082 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 43945 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 44424 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[8] Undefined offset: 44425 js.php at 29 row.
+[2016-03-07 01:04:50] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 01:04:50] [log] Process: 0.098s ( Load:0.0s Init:0.005s Exec:0.079s Template:0.013s )
+Start Logging [2016-03-07 01:04:52 0.03481200]==============
+[2016-03-07 01:04:52] REQUEST_URI: /profile/wanliqun
+[2016-03-07 01:04:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00040
+[2016-03-07 01:04:52] [log] Query SQL:SELECT * FROM `members` WHERE ((`username` = 'wanliqun'))
+Use time:0.00629
+[2016-03-07 01:04:52] [log] Query SQL:SELECT * FROM `countries` WHERE ((`iso2` IN ('CN')))
+Use time:0.00186
+[2016-03-07 01:04:52] [notice] Notice:[2048] Only variables should be passed by reference member.php at 108 row.
+[2016-03-07 01:04:52] [log] Query SQL:SELECT * FROM `countries`
+Use time:0.00105
+[2016-03-07 01:04:52] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 01:04:52] [log] Process: 0.143s ( Load:0.0s Init:0.006s Exec:0.114s Template:0.023s )
+Start Logging [2016-03-07 01:04:52 0.38891200]==============
+[2016-03-07 01:04:52] REQUEST_URI: /min/?g=css
+[2016-03-07 01:04:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00029
+Start Logging [2016-03-07 01:04:52 0.41813000]==============
+[2016-03-07 01:04:52] REQUEST_URI: /min/?f=bootstrap-paginator.min.js,member/profile.js&b=public/js
+[2016-03-07 01:04:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00051
+Start Logging [2016-03-07 01:04:52 0.46719900]==============
+[2016-03-07 01:04:52] REQUEST_URI: /min/?g=js
+[2016-03-07 01:04:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00069
+Start Logging [2016-03-07 01:04:52 0.82585200]==============
+[2016-03-07 01:04:52] REQUEST_URI: /min/?g=js
+[2016-03-07 01:04:52] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:52] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+Start Logging [2016-03-07 01:04:53 0.10249200]==============
+[2016-03-07 01:04:53] REQUEST_URI: /min/?f=bootstrap-paginator.min.js,member/profile.js&b=public/js
+[2016-03-07 01:04:53] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:53] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00031
+Start Logging [2016-03-07 01:04:53 0.37680700]==============
+[2016-03-07 01:04:53] REQUEST_URI: /?c=ajax&a=loadprofile&username=wanliqun&tab=posts&page=1&format=json
+[2016-03-07 01:04:53] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:04:53] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00040
+[2016-03-07 01:04:53] [notice] Notice:[8] Undefined index: join modelpager.php at 112 row.
+[2016-03-07 01:04:53] [log] Query SQL:SELECT COUNT(*) AS `cl_count` FROM `posts` WHERE ((`fk_user_name` = 'wanliqun' AND `status` != -1))
+Use time:0.00157
+[2016-03-07 01:04:53] [notice] Notice:[2] Invalid argument supplied for foreach() poststatistics.php at 22 row.
+[2016-03-07 01:04:53] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics`
+Use time:0.15336
+[2016-03-07 01:04:53] [notice] Notice:[2] Invalid argument supplied for foreach() poststatistics.php at 27 row.
+[2016-03-07 01:04:53] [notice] Notice:[2] Invalid argument supplied for foreach() ajax.php at 105 row.
+[2016-03-07 01:04:53] [notice] Notice:[8] Undefined variable: result ajax.php at 114 row.
+[2016-03-07 01:04:53] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 01:04:53] [log] Process: 0.521s ( Load:0.0s Init:0.006s Exec:0.509s Template:0.006s )
+Start Logging [2016-03-07 01:05:08 0.81773600]==============
+[2016-03-07 01:05:08] REQUEST_URI: /?c=ajax&a=loadprofile&username=wanliqun&tab=likes&page=1&format=json
+[2016-03-07 01:05:08] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:05:08] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00037
+[2016-03-07 01:05:08] [notice] Notice:[8] Undefined index: join modelpager.php at 112 row.
+[2016-03-07 01:05:08] [log] Query SQL:SELECT COUNT(*) AS `cl_count` FROM `liked_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `liked_value` = 1))
+Use time:0.00095
+[2016-03-07 01:05:08] [log] Query SQL:SELECT * FROM `liked_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `liked_value` = 1)) ORDER BY liked_at DESC LIMIT 0,16
+Use time:0.00041
+[2016-03-07 01:05:08] [log] Query SQL:SELECT * FROM `posts` WHERE ((`status` = 1 AND `pk_id` IN ('43017','40179','36704','36616','71','9')))
+Use time:0.00176
+[2016-03-07 01:05:08] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (9,71,36616,36704,40179)))
+Use time:0.00036
+[2016-03-07 01:05:08] [notice] Notice:[8] Undefined variable: result ajax.php at 106 row.
+[2016-03-07 01:05:08] [notice] Notice:[8] Undefined index: html ajax.php at 106 row.
+[2016-03-07 01:05:08] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 01:05:08] [log] Process: 0.049s ( Load:0.0s Init:0.010s Exec:0.037s Template:0.002s )
+Start Logging [2016-03-07 01:05:09 0.66580200]==============
+[2016-03-07 01:05:09] REQUEST_URI: /?c=ajax&a=loadprofile&username=wanliqun&tab=favourites&page=1&format=json
+[2016-03-07 01:05:09] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 01:05:09] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00025
+[2016-03-07 01:05:09] [notice] Notice:[8] Undefined index: join modelpager.php at 112 row.
+[2016-03-07 01:05:09] [log] Query SQL:SELECT COUNT(*) AS `cl_count` FROM `favorited_posts` WHERE ((`fk_user_name` = 'wanliqun'))
+Use time:0.00091
+[2016-03-07 01:05:09] [log] Query SQL:SELECT * FROM `favorited_posts` WHERE ((`fk_user_name` = 'wanliqun')) ORDER BY favorited_at DESC LIMIT 0,16
+Use time:0.00132
+[2016-03-07 01:05:09] [log] Query SQL:SELECT * FROM `posts` WHERE ((`status` = 1 AND `pk_id` IN ('43017','40179')))
+Use time:0.00067
+[2016-03-07 01:05:09] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (40179)))
+Use time:0.00032
+[2016-03-07 01:05:09] [notice] Notice:[8] Undefined variable: result ajax.php at 106 row.
+[2016-03-07 01:05:09] [notice] Notice:[8] Undefined index: html ajax.php at 106 row.
+[2016-03-07 01:05:09] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 01:05:09] [log] Process: 0.040s ( Load:0.0s Init:0.006s Exec:0.033s Template:0.002s )
+Start Logging [2016-03-07 04:03:08 0.86291700]==============
+[2016-03-07 04:03:08] REQUEST_URI: /
+[2016-03-07 04:03:08] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:08] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00288
+[2016-03-07 04:03:08] [log] Query SQL:SELECT `fk_post_id`,`cover_url` FROM `featured_posts` WHERE ((`status` = 1)) ORDER BY position DESC,featured_at DESC LIMIT 0,4
+Use time:0.00669
+[2016-03-07 04:03:08] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`cover_url` FROM `posts` WHERE ((`pk_id` IN ('45041','45028','45092','43732'))) LIMIT 0,4
+Use time:0.00319
+[2016-03-07 04:03:08] [log] Query SQL:SELECT `pk_id`,`btitle`,`type`,`fk_channel_id`,`fk_channel_name`,`fk_member_id`,`fk_user_name`,`media_ids`,`created_at` FROM `posts` WHERE ((`status` = 1)) ORDER BY created_at DESC LIMIT 0,30
+Use time:0.02152
+[2016-03-07 04:03:08] [log] Query SQL:SELECT `pk_id`,`src_from` FROM `medias` WHERE ((`pk_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00192
+[2016-03-07 04:03:08] [log] Query SQL:SELECT `fk_post_id`,(default_liked + newly_liked) AS `num_liked`,(default_disliked + newly_disliked) AS `num_disliked`,(default_favorited + newly_favorited) AS `num_favorited`,`newly_commented` AS `num_commented`,(default_viewed + newly_viewed) AS `num_viewed` FROM `post_statistics` WHERE ((`fk_post_id` IN (45131,45145,45140,45177,45128,45127,45117,45110,45115,45088,45099,45089,45092,45094,45090,45095,45035,45056,45074,45041,45028,45011,45010,44465,44444,43796,44082,43945,44424,44425)))
+Use time:0.00579
+[2016-03-07 04:03:09] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.39902
+[2016-03-07 04:03:09] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:03:09] [log] Process: 0.624s ( Load:0.0s Init:0.015s Exec:0.591s Template:0.018s )
+Start Logging [2016-03-07 04:03:09 0.60500900]==============
+[2016-03-07 04:03:09] REQUEST_URI: /min/?g=css
+[2016-03-07 04:03:09] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:09] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00052
+Start Logging [2016-03-07 04:03:09 0.70783200]==============
+[2016-03-07 04:03:09] REQUEST_URI: /min/?g=js
+[2016-03-07 04:03:09] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:09] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00059
+Start Logging [2016-03-07 04:03:09 0.85759800]==============
+[2016-03-07 04:03:09] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-03-07 04:03:09] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:09] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00060
+Start Logging [2016-03-07 04:03:15 0.93106600]==============
+[2016-03-07 04:03:15] REQUEST_URI: /min/?g=js
+[2016-03-07 04:03:15] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:15] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00066
+Start Logging [2016-03-07 04:03:16 0.30608900]==============
+[2016-03-07 04:03:16] REQUEST_URI: /min/?f=youtube.js,home.js&b=public/js
+[2016-03-07 04:03:16] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:16] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00062
+Start Logging [2016-03-07 04:03:16 0.43201600]==============
+[2016-03-07 04:03:16] REQUEST_URI: /?c=js&a=post_actionbox&postids=45131%2C45145%2C45140%2C45177%2C45128%2C45127%2C45117%2C45110%2C45115%2C45088%2C45099%2C45089%2C45092%2C45094%2C45090%2C45095%2C45035%2C45056%2C45074%2C45041%2C45028%2C45011%2C45010%2C44465%2C44444%2C43796%2C44082%2C43945%2C44424%2C44425&_=1457323396249
+[2016-03-07 04:03:16] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:16] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00063
+[2016-03-07 04:03:16] [log] Query SQL:SELECT * FROM `liked_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `fk_post_id` IN ('45131','45145','45140','45177','45128','45127','45117','45110','45115','45088','45099','45089','45092','45094','45090','45095','45035','45056','45074','45041','45028','45011','45010','44465','44444','43796','44082','43945','44424','44425')))
+Use time:0.00229
+[2016-03-07 04:03:16] [log] Query SQL:SELECT * FROM `favorited_posts` WHERE ((`fk_user_name` = 'wanliqun' AND `fk_post_id` IN ('45131','45145','45140','45177','45128','45127','45117','45110','45115','45088','45099','45089','45092','45094','45090','45095','45035','45056','45074','45041','45028','45011','45010','44465','44444','43796','44082','43945','44424','44425')))
+Use time:0.00576
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45131 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45145 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45140 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45177 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45128 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45127 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45117 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45110 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45115 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45088 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45099 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45089 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45092 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45094 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45090 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45095 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45035 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45056 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45074 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45041 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45028 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45011 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 45010 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 44465 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 44444 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 43796 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 44082 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 43945 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 44424 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[8] Undefined offset: 44425 js.php at 29 row.
+[2016-03-07 04:03:16] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:03:16] [log] Process: 0.095s ( Load:0.0s Init:0.007s Exec:0.074s Template:0.014s )
+Start Logging [2016-03-07 04:03:26 0.07348200]==============
+[2016-03-07 04:03:26] REQUEST_URI: /popular/
+[2016-03-07 04:03:26] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:26] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00044
+[2016-03-07 04:03:26] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_viewed` + ps.`newly_viewed`) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY (ps.`default_viewed` + ps.`newly_viewed`) DESC, ps.`created_at` DESC LIMIT 0, 60;		
+Use time:0.28384
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:26] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY ((ps.`default_viewed` + ps.`newly_viewed`) * 0.001 + (ps.`default_liked` + ps.`newly_liked`) * 0.2 + (ps.`default_commented` + ps.`newly_commented`) * 1) / GREATEST(TIMESTAMPDIFF(SECOND, ps.`created_at`, NOW()) / 86400, 1.0) DESC, ps.`created_at` DESC LIMIT 0, 20;		
+Use time:0.35889
+[2016-03-07 04:03:26] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:03:26] [log] Process: 0.681s ( Load:0.0s Init:0.006s Exec:0.668s Template:0.007s )
+Start Logging [2016-03-07 04:03:26 0.89006700]==============
+[2016-03-07 04:03:26] REQUEST_URI: /min/?g=css
+[2016-03-07 04:03:26] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:26] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00031
+Start Logging [2016-03-07 04:03:26 0.92657400]==============
+[2016-03-07 04:03:26] REQUEST_URI: /min/?f=jquery.dotdotdot.min.js,bootstrap-paginator.min.js,bootstrap-select.min.js,popular.js&b=public/js
+[2016-03-07 04:03:26] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:26] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00059
+Start Logging [2016-03-07 04:03:26 0.98211900]==============
+[2016-03-07 04:03:26] REQUEST_URI: /min/?g=js
+[2016-03-07 04:03:26] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:26] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00057
+Start Logging [2016-03-07 04:03:27 0.39705800]==============
+[2016-03-07 04:03:27] REQUEST_URI: /min/?g=js
+[2016-03-07 04:03:27] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:27] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+Start Logging [2016-03-07 04:03:27 0.79581500]==============
+[2016-03-07 04:03:27] REQUEST_URI: /min/?f=jquery.dotdotdot.min.js,bootstrap-paginator.min.js,bootstrap-select.min.js,popular.js&b=public/js
+[2016-03-07 04:03:27] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:27] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00057
+Start Logging [2016-03-07 04:03:31 0.03850200]==============
+[2016-03-07 04:03:31] REQUEST_URI: /?c=ajax&a=loadpopular&filter=always&acc=most-liked&format=json
+[2016-03-07 04:03:31] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:31] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00024
+[2016-03-07 04:03:31] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_liked` + ps.`newly_liked`) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY (ps.`default_liked` + ps.`newly_liked`) DESC, ps.`created_at` DESC LIMIT 0, 60;		
+Use time:0.31544
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: html ajax.php at 63 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:31] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:31] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:03:31] [log] Process: 0.356s ( Load:0.0s Init:0.005s Exec:0.346s Template:0.005s )
+Start Logging [2016-03-07 04:03:32 0.41481900]==============
+[2016-03-07 04:03:32] REQUEST_URI: /?c=ajax&a=loadpopular&filter=always&acc=most-commented&format=json
+[2016-03-07 04:03:32] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:32] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00043
+[2016-03-07 04:03:32] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, (ps.`default_commented` + ps.`newly_commented`) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY (ps.`default_commented` + ps.`newly_commented`) DESC, ps.`created_at` DESC LIMIT 0, 60;		
+Use time:0.36028
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: html ajax.php at 63 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:32] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:32] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:03:32] [log] Process: 0.403s ( Load:0.0s Init:0.009s Exec:0.392s Template:0.002s )
+Start Logging [2016-03-07 04:03:34 0.57071000]==============
+[2016-03-07 04:03:34] REQUEST_URI: /?c=ajax&a=loadpopular&filter=always&acc=most-viewed&format=json
+[2016-03-07 04:03:34] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:34] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00035
+[2016-03-07 04:03:34] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_viewed` + ps.`newly_viewed`) as `num_viewed`, (ps.`default_viewed` + ps.`newly_viewed`) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY (ps.`default_viewed` + ps.`newly_viewed`) DESC, ps.`created_at` DESC LIMIT 0, 60;		
+Use time:0.29152
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: html ajax.php at 63 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:34] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:34] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:03:34] [log] Process: 0.330s ( Load:0.0s Init:0.005s Exec:0.323s Template:0.002s )
+Start Logging [2016-03-07 04:03:36 0.86909500]==============
+[2016-03-07 04:03:36] REQUEST_URI: /?c=ajax&a=loadpopular&filter=always&acc=most-liked&format=json
+[2016-03-07 04:03:36] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:36] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00024
+[2016-03-07 04:03:37] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_liked` + ps.`newly_liked`) as `num_liked`, (ps.`default_liked` + ps.`newly_liked`) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY (ps.`default_liked` + ps.`newly_liked`) DESC, ps.`created_at` DESC LIMIT 0, 60;		
+Use time:0.30639
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: html ajax.php at 63 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:37] [notice] Notice:[8] Undefined index: showcomment libajax.php at 56 row.
+[2016-03-07 04:03:37] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:03:37] [log] Process: 0.342s ( Load:0.0s Init:0.003s Exec:0.337s Template:0.002s )
+Start Logging [2016-03-07 04:03:41 0.52054000]==============
+[2016-03-07 04:03:41] REQUEST_URI: /?c=ajax&a=loadpopular&filter=always&acc=most-commented&format=json
+[2016-03-07 04:03:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00040
+[2016-03-07 04:03:41] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, (ps.`default_commented` + ps.`newly_commented`) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY (ps.`default_commented` + ps.`newly_commented`) DESC, ps.`created_at` DESC LIMIT 0, 60;		
+Use time:0.32468
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: html ajax.php at 63 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:41] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:41] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:03:41] [log] Process: 0.363s ( Load:0.0s Init:0.005s Exec:0.356s Template:0.002s )
+Start Logging [2016-03-07 04:03:41 0.88911700]==============
+[2016-03-07 04:03:41] REQUEST_URI: /?c=ajax&a=loadpopular&filter=always&acc=most-commented&format=json
+[2016-03-07 04:03:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00040
+[2016-03-07 04:03:42] [log] Query SQL:SELECT  ps.`created_at`, (ps.`default_commented` + ps.`newly_commented`) as `num_commented`, (ps.`default_commented` + ps.`newly_commented`) as `weight`, ps.`newly_commented`,		p.`pk_id`, p.`btitle`, p.`type`, p.`cover_url`	FROM `post_statistics` as ps, `posts` as p	WHERE ps.`fk_post_id` = p.`pk_id` AND p.`status` = 1		AND ps.`created_at` >= '1970-01-01 00:00:00' AND ps.`created_at` < '9999-01-01 00:00:00' 	ORDER BY (ps.`default_commented` + ps.`newly_commented`) DESC, ps.`created_at` DESC LIMIT 0, 60;		
+Use time:0.26703
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_viewed popularposts.php at 87 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: num_liked popularposts.php at 89 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: html ajax.php at 63 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showview libajax.php at 50 row.
+[2016-03-07 04:03:42] [notice] Notice:[8] Undefined index: showlike libajax.php at 53 row.
+[2016-03-07 04:03:42] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:03:42] [log] Process: 0.304s ( Load:0.0s Init:0.005s Exec:0.295s Template:0.004s )
+Start Logging [2016-03-07 04:03:43 0.00162100]==============
+[2016-03-07 04:03:43] REQUEST_URI: /channels/
+[2016-03-07 04:03:43] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:43] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00027
+[2016-03-07 04:03:43] [log] Query SQL:SELECT * FROM `channels` ORDER BY position DESC
+Use time:0.00326
+[2016-03-07 04:03:43] [log] Query SQL:(SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=1 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=2 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=3 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=4 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=11 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=12 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=13 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=5 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=6 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=7 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=8 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=9 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12) UNION ALL (SELECT `pk_id`, `btitle`, `type`, `fk_channel_id`, `fk_channel_name`, `cover_url`, `created_at` FROM `posts`  WHERE `fk_channel_id`=10 AND `status`=1 ORDER BY `created_at` DESC LIMIT 12)
+Use time:0.09548
+[2016-03-07 04:03:43] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:03:43] [log] Process: 0.146s ( Load:0.0s Init:0.003s Exec:0.117s Template:0.026s )
+Start Logging [2016-03-07 04:03:43 0.25507000]==============
+[2016-03-07 04:03:43] REQUEST_URI: /min/?g=css
+[2016-03-07 04:03:43] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:43] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00044
+Start Logging [2016-03-07 04:03:43 0.33055100]==============
+[2016-03-07 04:03:43] REQUEST_URI: /min/?g=js
+[2016-03-07 04:03:43] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:43] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00035
+Start Logging [2016-03-07 04:03:43 0.36095000]==============
+[2016-03-07 04:03:43] REQUEST_URI: /min/?f=bootstrap-paginator.min.js,slick.min.js&b=public/js
+[2016-03-07 04:03:43] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:43] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00036
+Start Logging [2016-03-07 04:03:43 0.97459600]==============
+[2016-03-07 04:03:43] REQUEST_URI: /min/?g=js
+[2016-03-07 04:03:43] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:43] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00035
+Start Logging [2016-03-07 04:03:44 0.31196300]==============
+[2016-03-07 04:03:44] REQUEST_URI: /min/?f=bootstrap-paginator.min.js,slick.min.js&b=public/js
+[2016-03-07 04:03:44] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:03:44] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00031
+Start Logging [2016-03-07 04:06:57 0.53326400]==============
+[2016-03-07 04:06:57] REQUEST_URI: /upload
+[2016-03-07 04:06:57] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:06:58] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.64225
+Start Logging [2016-03-07 04:06:58 0.22005100]==============
+[2016-03-07 04:06:58] REQUEST_URI: /signin?redirect=http%3A%2F%2Fdemo.iprank.tv%2Fupload
+[2016-03-07 04:06:58] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:06:58] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00034
+[2016-03-07 04:06:58] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:06:58] [log] Process: 0.019s ( Load:0.0s Init:0.003s Exec:0.013s Template:0.003s )
+Start Logging [2016-03-07 04:06:58 0.37888100]==============
+[2016-03-07 04:06:58] REQUEST_URI: /min/?g=css
+[2016-03-07 04:06:58] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:06:58] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00040
+Start Logging [2016-03-07 04:06:58 0.40976300]==============
+[2016-03-07 04:06:58] REQUEST_URI: /min/?g=js
+[2016-03-07 04:06:58] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:06:58] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00056
+Start Logging [2016-03-07 04:06:58 0.45415600]==============
+[2016-03-07 04:06:58] REQUEST_URI: /min/?f=member/signin.js&b=public/js
+[2016-03-07 04:06:58] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:06:58] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00123
+Start Logging [2016-03-07 04:06:58 0.77931500]==============
+[2016-03-07 04:06:58] REQUEST_URI: /min/?g=js
+[2016-03-07 04:06:58] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:06:58] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00033
+Start Logging [2016-03-07 04:06:59 0.01607800]==============
+[2016-03-07 04:06:59] REQUEST_URI: /min/?f=member/signin.js&b=public/js
+[2016-03-07 04:06:59] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:06:59] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00033
+Start Logging [2016-03-07 04:17:41 0.15769300]==============
+[2016-03-07 04:17:41] REQUEST_URI: /upload
+[2016-03-07 04:17:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:17:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00114
+Start Logging [2016-03-07 04:17:41 0.19985100]==============
+[2016-03-07 04:17:41] REQUEST_URI: /signin?redirect=http%3A%2F%2Fdemo.iprank.tv%2Fupload
+[2016-03-07 04:17:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:17:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00028
+[2016-03-07 04:17:41] [notice] Notice:[2] Missing argument 1 for AppController::debug() appcontroller.php at 250 row.
+[2016-03-07 04:17:41] [log] Process: 0.021s ( Load:0.0s Init:0.004s Exec:0.013s Template:0.005s )
+Start Logging [2016-03-07 04:17:41 0.37412300]==============
+[2016-03-07 04:17:41] REQUEST_URI: /min/?g=css
+[2016-03-07 04:17:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:17:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00041
+Start Logging [2016-03-07 04:17:41 0.41829500]==============
+[2016-03-07 04:17:41] REQUEST_URI: /min/?g=js
+[2016-03-07 04:17:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:17:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00039
+Start Logging [2016-03-07 04:17:41 0.45855800]==============
+[2016-03-07 04:17:41] REQUEST_URI: /min/?f=member/signin.js&b=public/js
+[2016-03-07 04:17:41] [notice] Notice:[8192] mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead mysqladapter.php at 96 row.
+[2016-03-07 04:17:41] [log] Query SQL:SELECT * FROM `sys_configs` WHERE ((`status` = 1)) ORDER BY sorts DESC,id ASC
+Use time:0.00057

@@ -1,0 +1,5 @@
+===================================================================================
+Bootstrap-select v1.5.4 - 06/11/2014
+
+dist:
+https://github.com/silviomoreto/bootstrap-select
